@@ -1,3 +1,4 @@
+using RayFire;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform gunEnd;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject impactEffect;
+    [SerializeField] float bulletSpeed = 10f;
+    [SerializeField] GameObject Bullet;
+
+    [SerializeField] private RayfireGun rayfireGun;
+    [SerializeField] private Transform rayFireGunTarget;
 
     [SerializeField] Camera fpsCam;
 
@@ -30,21 +36,21 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-
-        muzzleFlash.GetComponent<ParticleSystem>().Play();
-
+        GameObject createdBullet = Instantiate(Bullet, gunEnd.position, gunEnd.rotation);
         RaycastHit hit;
+        
+        createdBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
+        muzzleFlash.GetComponent<ParticleSystem>().Play();
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-
+            rayFireGunTarget.position = hit.point;
+            rayfireGun.Shoot();
 
             if (hit.transform.gameObject.CompareTag("Box"))
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-
-
         }
     }
 }

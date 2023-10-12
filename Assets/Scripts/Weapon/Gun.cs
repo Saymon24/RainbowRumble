@@ -44,6 +44,7 @@ public class Gun : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            Instantiate(impactEffect, rayFireGunTarget.position, rayFireGunTarget.rotation);
             rayFireGunTarget.position = hit.point;
             rayfireGun.Shoot();
 

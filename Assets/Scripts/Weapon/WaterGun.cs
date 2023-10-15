@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class WaterGun : MonoBehaviour
 {
 
     [Header("Gun Settings")]
@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform gunEnd;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject impactEffect;
-    [SerializeField] GameObject Bullet;
+    [SerializeField] LineRenderer beam;
 
     [SerializeField] private RayfireGun rayfireGun;
     [SerializeField] private Transform rayFireGunTarget;
@@ -20,6 +20,19 @@ public class Gun : MonoBehaviour
 
     private float timeSinceLastShoot = 0f;
 
+    private void Awake()
+    {
+        beam.enabled = false;
+    }
+
+    private void Activate()
+    {
+        beam.enabled = true;
+    }
+
+    private void DeActivate() { 
+        beam.enabled = false;
+    }
 
     public void StartReload()
     {
@@ -42,24 +55,38 @@ public class Gun : MonoBehaviour
         return !gunData.reloading && timeSinceLastShoot > 1f / (gunData.fireRate / 60f);
     }
 
+    private void PercentageMagasin()
+    {
+        float waterSentPerShot = gunData.fireRate / 60f;
+        float remainingWater = (float)gunData.currentAmmo * waterSentPerShot;
+        float percentage = (remainingWater / (gunData.magSize * waterSentPerShot)) * 100f;
+        gunData.currentAmmo = percentage;
+        print(gunData.currentAmmo);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Fire1"))
         {
-            
             if (gunData.currentAmmo > 0)
             {
                 if (CanShoot())
                 {
-                    gunData.currentAmmo--;
+                    Activate();
+                    PercentageMagasin();
                     timeSinceLastShoot = 0;
                     Shoot();
                 }
             }
 
+            timeSinceLastShoot += Time.deltaTime;
         }
-        timeSinceLastShoot += Time.deltaTime;
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            DeActivate();
+        }
 
         if (Input.GetButton("Reload"))
         {
@@ -70,17 +97,16 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject createdBullet = Instantiate(Bullet, gunEnd.position, gunEnd.rotation);
         RaycastHit hit;
         
-        createdBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(0, 0, gunData.bulletSpeed));
-        muzzleFlash.GetComponent<ParticleSystem>().Play();
+        if (muzzleFlash != null)
+            muzzleFlash.GetComponent<ParticleSystem>().Play();
 
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, gunData.range))
-        {
-            Instantiate(impactEffect, rayFireGunTarget.position, rayFireGunTarget.rotation);
-            rayFireGunTarget.position = hit.point;
-            rayfireGun.Shoot();
-        }
+        Ray ray = new Ray(gunEnd.position, gunEnd.forward);
+        bool cast = Physics.Raycast(ray, out hit, gunData.range);
+        Vector3 hitPosition = cast ? hit.point : gunEnd.position + gunEnd.forward * gunData.range;
+
+        beam.SetPosition(0, gunEnd.position);
+        beam.SetPosition(1, hitPosition);
     }
 }

@@ -20,5 +20,5 @@ MonoBehaviour:
   currentAmmo: 0
   magSize: 1000000
   fireRate: 1000
-  reloadTime: 5
+  reloadTime: 0
   reloading: 0

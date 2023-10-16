@@ -52,16 +52,16 @@ public class WaterGun : MonoBehaviour
 
     private bool CanShoot()
     {
-        return !gunData.reloading && timeSinceLastShoot > 1f / (gunData.fireRate / 60f);
+        return !gunData.reloading;
     }
 
     private void PercentageMagasin()
     {
         float waterSentPerShot = gunData.fireRate / 60f;
-        float remainingWater = (float)gunData.currentAmmo * waterSentPerShot;
-        float percentage = (remainingWater / (gunData.magSize * waterSentPerShot)) * 100f;
-        gunData.currentAmmo = percentage;
-        print(gunData.currentAmmo);
+        gunData.currentAmmo -= waterSentPerShot;
+
+        if (gunData.currentAmmo < 0)
+            gunData.currentAmmo = 0;
     }
 
     // Update is called once per frame
@@ -73,7 +73,6 @@ public class WaterGun : MonoBehaviour
             {
                 if (CanShoot())
                 {
-                    Activate();
                     PercentageMagasin();
                     timeSinceLastShoot = 0;
                     Shoot();
@@ -86,6 +85,8 @@ public class WaterGun : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             DeActivate();
+            beam.SetPosition(0, gunEnd.position);
+            beam.SetPosition(1, gunEnd.position);
         }
 
         if (Input.GetButton("Reload"))
@@ -93,6 +94,17 @@ public class WaterGun : MonoBehaviour
             StartReload();
         }
 
+    }
+
+    private void LateUpdate()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(gunEnd.position, gunEnd.forward);
+        bool cast = Physics.Raycast(ray, out hit, gunData.range);
+        Vector3 hitPosition = cast ? hit.point : gunEnd.position + gunEnd.forward * gunData.range;
+
+        beam.SetPosition(0, gunEnd.position);
+        beam.SetPosition(1, hitPosition);
     }
 
     private void Shoot()
@@ -108,5 +120,6 @@ public class WaterGun : MonoBehaviour
 
         beam.SetPosition(0, gunEnd.position);
         beam.SetPosition(1, hitPosition);
+        Activate();
     }
 }

@@ -80,6 +80,17 @@ public class Gun : MonoBehaviour
         {
             Instantiate(impactEffect, rayFireGunTarget.position, rayFireGunTarget.rotation);
             rayFireGunTarget.position = hit.point;
+
+            Collider[] overlap = Physics.OverlapSphere(hit.point, 0.1f);
+
+            for (int i = 0; i < overlap.Length; i++)
+            {
+                if (overlap[i].CompareTag("Enemy"))
+                {
+                    Debug.Log("Touché");
+                    overlap[i].GetComponent<Enemy>().takeDamage(gunData.damage);
+                }
+            }
             rayfireGun.Shoot();
         }
     }

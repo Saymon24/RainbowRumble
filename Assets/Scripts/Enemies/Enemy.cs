@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage;
+        Debug.Log(health);
     }
 
     private void destroyEnemy()

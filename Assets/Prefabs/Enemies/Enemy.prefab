@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7566478219154855942}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,12 +152,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   health: 120
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
   timeBetweenAttacks: 0.5
-  sightRange: 20
-  attackRange: 12
-  playerInSightRange: 0
+  attackRange: 1
   playerInAttackRange: 0
 --- !u!114 &7566478219154855942
 MonoBehaviour:

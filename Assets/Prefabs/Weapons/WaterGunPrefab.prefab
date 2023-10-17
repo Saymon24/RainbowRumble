@@ -115,7 +115,7 @@ MonoBehaviour:
   impactEffect: {fileID: 0}
   beam: {fileID: 4727589616567196429, guid: c83e1880cda87474b85135fe18efac63, type: 3}
   fpsCam: {fileID: 0}
-  gravityMax: 3
+  gravityMax: 0.2
 --- !u!1001 &9152934711036758865
 PrefabInstance:
   m_ObjectHideFlags: 0

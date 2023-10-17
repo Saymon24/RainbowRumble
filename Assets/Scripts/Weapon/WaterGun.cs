@@ -27,6 +27,8 @@ public class WaterGun : MonoBehaviour
     private void Awake()
     {
         createdBeam = Instantiate(beam);
+        createdBeam.GetComponentInChildren<WaterGunParticles>().InitGunData(gunData);
+
         particleBeam = createdBeam.GetComponentInChildren<ParticleSystem>();
     }
 
@@ -36,8 +38,7 @@ public class WaterGun : MonoBehaviour
             return;
         createdBeam.transform.position = gunEnd.position;
         createdBeam.transform.LookAt(hitPosition);
-        createdBeam.transform.rotation = Quaternion.LookRotation(hitPosition - gunEnd.position);
-        createdBeam.transform.position = (gunEnd.position + hitPosition) / 2;
+        createdBeam.transform.SetPositionAndRotation((gunEnd.position + hitPosition) / 2, Quaternion.LookRotation(hitPosition - gunEnd.position));
         particleBeam.Play();
 
         isActive = true;
@@ -87,12 +88,8 @@ public class WaterGun : MonoBehaviour
     void ApplyNewGravityToParticles()
     {
         newGravity = gravityMax - gunData.currentAmmo * gravityMax / 100;
-        print(newGravity);
-        
         ParticleSystem.MainModule main = particleBeam.main;
-
         main.gravityModifierMultiplier = newGravity;
-
     }
 
     void Update()
@@ -142,11 +139,10 @@ public class WaterGun : MonoBehaviour
         Activate();
     }
 
-
-
-
-
-
+    public GunData GetGunData()
+    {
+        return gunData;
+    }
 
 
 

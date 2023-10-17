@@ -151,7 +151,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.96e-43, y: 1.61e-43, z: 0, w: -1.2609507e-37}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 6.2e-44, z: 2.892e-42, w: 1.0403e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -207,7 +207,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5092,14 +5092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff7d93287d94a24d9391ae159d4caab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  range: 100
-  firerate: 10
-  impactForce: 1000
+  gunData: {fileID: 0}
   gunEnd: {fileID: 32213989063014475}
   muzzleFlash: {fileID: 4986242710979905200}
   impactEffect: {fileID: 100000, guid: 447357f4ef4211c4ebf94d3c65e1da19, type: 3}
-  bulletSpeed: 130
   Bullet: {fileID: 7431132884336802340, guid: 76a03e09d9504264f8d02f805955073b, type: 3}
   rayfireGun: {fileID: 528298854132347474}
   rayFireGunTarget: {fileID: 7174365993652400005}

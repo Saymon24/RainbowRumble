@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3285324822752900667}
   - component: {fileID: 4968316180452280034}
   - component: {fileID: 3873288080878930782}
+  - component: {fileID: 7566478219154855942}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,10 +152,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   health: 120
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
   timeBetweenAttacks: 0.5
-  sightRange: 20
-  attackRange: 12
-  playerInSightRange: 0
+  attackRange: 1
   playerInAttackRange: 0
+--- !u!114 &7566478219154855942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2776051795049151537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e67e340b4f1a184592341f07c5a213c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 120
+  speed: 10
+  damage: 5
+  spawnRate: 0.1

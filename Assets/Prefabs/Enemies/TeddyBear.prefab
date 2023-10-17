@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3873288080878930782}
   - component: {fileID: 7566478219154855942}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: TeddyBear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

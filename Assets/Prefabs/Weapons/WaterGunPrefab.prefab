@@ -113,7 +113,7 @@ MonoBehaviour:
   gunEnd: {fileID: 2349613310980355092}
   muzzleFlash: {fileID: 0}
   impactEffect: {fileID: 0}
-  beam: {fileID: 4727589616567196429, guid: d53bdba6552a0db479be9fe1df708d1b, type: 3}
+  beam: {fileID: 4727589616567196429, guid: c83e1880cda87474b85135fe18efac63, type: 3}
   fpsCam: {fileID: 0}
   gravityMax: 3
 --- !u!1001 &9152934711036758865

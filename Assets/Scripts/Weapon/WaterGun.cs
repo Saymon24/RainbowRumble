@@ -1,7 +1,6 @@
 using RayFire;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class WaterGun : MonoBehaviour
@@ -22,7 +21,6 @@ public class WaterGun : MonoBehaviour
 
 
     [SerializeField] float gravityMax = 5f;
-    float gravityMin = 0f;
     float newGravity = 0f;
 
 

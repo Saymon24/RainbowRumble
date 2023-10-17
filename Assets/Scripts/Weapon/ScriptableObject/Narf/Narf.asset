@@ -21,4 +21,4 @@ MonoBehaviour:
   magSize: 30
   fireRate: 550
   reloadTime: 3
-  reloading: 0
+  reloading: 1

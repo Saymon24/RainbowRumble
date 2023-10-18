@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerGun
   - Box
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - FPSLayer
-  - 
+  - Player
   - 
   - 
   - 

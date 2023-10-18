@@ -20,6 +20,10 @@ public class Gun : MonoBehaviour
 
     private float timeSinceLastShoot = 0f;
 
+    private void Start()
+    {
+        gunData.reloading = false;
+    }
 
     public void StartReload()
     {
@@ -47,7 +51,6 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            
             if (gunData.currentAmmo > 0)
             {
                 if (CanShoot())
@@ -57,9 +60,8 @@ public class Gun : MonoBehaviour
                     Shoot();
                 }
             }
-
+            timeSinceLastShoot += Time.deltaTime;
         }
-        timeSinceLastShoot += Time.deltaTime;
 
         if (Input.GetButton("Reload"))
         {
@@ -80,6 +82,17 @@ public class Gun : MonoBehaviour
         {
             Instantiate(impactEffect, rayFireGunTarget.position, rayFireGunTarget.rotation);
             rayFireGunTarget.position = hit.point;
+
+            Collider[] overlap = Physics.OverlapSphere(hit.point, 0.1f);
+
+            for (int i = 0; i < overlap.Length; i++)
+            {
+                if (overlap[i].CompareTag("Enemy"))
+                {
+                    Debug.Log("Touché");
+                    overlap[i].GetComponent<Enemy>().takeDamage(gunData.damage);
+                }
+            }
             rayfireGun.Shoot();
         }
     }

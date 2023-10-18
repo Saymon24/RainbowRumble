@@ -11,27 +11,46 @@ public class WaterGun : MonoBehaviour
     [SerializeField] Transform gunEnd;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject impactEffect;
-    [SerializeField] LineRenderer beam;
-
-    [SerializeField] private RayfireGun rayfireGun;
-    [SerializeField] private Transform rayFireGunTarget;
-
+    [SerializeField] GameObject beam;
     [SerializeField] Camera fpsCam;
 
-    private float timeSinceLastShoot = 0f;
+    private bool isActive = false;
+    private Vector3 hitPosition = Vector3.zero;
+    private GameObject createdBeam;
+    private ParticleSystem particleBeam;
+
+
+    [SerializeField] float gravityMax = 5f;
+    float newGravity = 0f;
+
 
     private void Awake()
     {
-        beam.enabled = false;
+        createdBeam = Instantiate(beam);
+        createdBeam.GetComponentInChildren<WaterGunParticles>().InitGunData(gunData);
+
+        particleBeam = createdBeam.GetComponentInChildren<ParticleSystem>();
     }
 
     private void Activate()
     {
-        beam.enabled = true;
+        if (isActive)
+            return;
+        createdBeam.transform.position = gunEnd.position;
+        createdBeam.transform.LookAt(hitPosition);
+        createdBeam.transform.SetPositionAndRotation((gunEnd.position + hitPosition) / 2, Quaternion.LookRotation(hitPosition - gunEnd.position));
+        particleBeam.Play();
+
+        isActive = true;
     }
 
-    private void DeActivate() { 
-        beam.enabled = false;
+    private void DeActivate() {
+
+        if (createdBeam != null)
+        {
+            particleBeam.Stop();
+            isActive = false;
+        }
     }
 
     public void StartReload()
@@ -48,23 +67,31 @@ public class WaterGun : MonoBehaviour
         yield return new WaitForSeconds(gunData.reloadTime);
         gunData.currentAmmo = gunData.magSize;
         gunData.reloading = false;
+        newGravity = 0f;
     }
 
     private bool CanShoot()
     {
-        return !gunData.reloading && timeSinceLastShoot > 1f / (gunData.fireRate / 60f);
+        return !gunData.reloading;
     }
 
     private void PercentageMagasin()
     {
         float waterSentPerShot = gunData.fireRate / 60f;
-        float remainingWater = (float)gunData.currentAmmo * waterSentPerShot;
-        float percentage = (remainingWater / (gunData.magSize * waterSentPerShot)) * 100f;
-        gunData.currentAmmo = percentage;
-        print(gunData.currentAmmo);
+        gunData.currentAmmo -= waterSentPerShot;
+
+        if (gunData.currentAmmo < 0)
+            gunData.currentAmmo = 0;
+        ApplyNewGravityToParticles();
     }
 
-    // Update is called once per frame
+    void ApplyNewGravityToParticles()
+    {
+        newGravity = gravityMax - gunData.currentAmmo * gravityMax / 100;
+        ParticleSystem.MainModule main = particleBeam.main;
+        main.gravityModifierMultiplier = newGravity;
+    }
+
     void Update()
     {
         if (Input.GetButton("Fire1"))
@@ -73,17 +100,13 @@ public class WaterGun : MonoBehaviour
             {
                 if (CanShoot())
                 {
-                    Activate();
                     PercentageMagasin();
-                    timeSinceLastShoot = 0;
                     Shoot();
                 }
             }
-
-            timeSinceLastShoot += Time.deltaTime;
         }
 
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") || gunData.currentAmmo < 0f)
         {
             DeActivate();
         }
@@ -95,18 +118,37 @@ public class WaterGun : MonoBehaviour
 
     }
 
-    private void Shoot()
+    private void LateUpdate()
     {
         RaycastHit hit;
-        
-        if (muzzleFlash != null)
-            muzzleFlash.GetComponent<ParticleSystem>().Play();
-
-        Ray ray = new Ray(gunEnd.position, gunEnd.forward);
+        Ray ray = fpsCam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         bool cast = Physics.Raycast(ray, out hit, gunData.range);
-        Vector3 hitPosition = cast ? hit.point : gunEnd.position + gunEnd.forward * gunData.range;
+        hitPosition = cast ? hit.point : ray.GetPoint(gunData.range);
 
-        beam.SetPosition(0, gunEnd.position);
-        beam.SetPosition(1, hitPosition);
+        if (isActive)
+        {
+            createdBeam.transform.position = (gunEnd.position);
+            float distance = Vector3.Distance(gunEnd.position, hitPosition);
+            createdBeam.transform.localScale = new Vector3(createdBeam.transform.localScale.x, createdBeam.transform.localScale.y, distance / 2);
+            createdBeam.transform.LookAt(hitPosition);
+        }
     }
+
+    private void Shoot()
+    {
+        Activate();
+    }
+
+    public GunData GetGunData()
+    {
+        return gunData;
+    }
+
+
+
+
+
+
+
+
 }

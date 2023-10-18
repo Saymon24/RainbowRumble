@@ -72,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7101162519988501280}
   - component: {fileID: 1172541563458430731}
+  - component: {fileID: 1048160364806937360}
   m_Layer: 6
   m_Name: WaterGunPrefab
   m_TagString: Untagged
@@ -116,6 +117,19 @@ MonoBehaviour:
   beam: {fileID: 4727589616567196429, guid: c83e1880cda87474b85135fe18efac63, type: 3}
   fpsCam: {fileID: 0}
   gravityMax: 0.2
+--- !u!114 &1048160364806937360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743037724414003864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e11e465dc1671b42859feb3b4dacf71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponData: {fileID: 11400000, guid: 280a0dc43aef6b842a87440f28da991a, type: 2}
 --- !u!1001 &9152934711036758865
 PrefabInstance:
   m_ObjectHideFlags: 0

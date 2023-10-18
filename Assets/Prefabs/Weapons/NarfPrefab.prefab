@@ -5054,6 +5054,7 @@ GameObject:
   - component: {fileID: 7852592614180247052}
   - component: {fileID: 2478904342972272640}
   - component: {fileID: 528298854132347474}
+  - component: {fileID: 1314153927712696533}
   m_Layer: 6
   m_Name: NarfPrefab
   m_TagString: Untagged
@@ -5092,7 +5093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff7d93287d94a24d9391ae159d4caab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 0}
+  gunData: {fileID: 11400000, guid: 4b09ddb26ac16574db80211dc824781d, type: 2}
   gunEnd: {fileID: 32213989063014475}
   muzzleFlash: {fileID: 4986242710979905200}
   impactEffect: {fileID: 100000, guid: 447357f4ef4211c4ebf94d3c65e1da19, type: 3}
@@ -5141,6 +5142,19 @@ MonoBehaviour:
   showRay: 1
   showHit: 1
   shooting: 0
+--- !u!114 &1314153927712696533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524265051015810229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e11e465dc1671b42859feb3b4dacf71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponData: {fileID: 11400000, guid: 4b09ddb26ac16574db80211dc824781d, type: 2}
 --- !u!1001 &4825799632718920974
 PrefabInstance:
   m_ObjectHideFlags: 0

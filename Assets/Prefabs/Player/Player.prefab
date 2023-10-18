@@ -399,6 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6319954144074280210}
   - component: {fileID: 1420517499676995218}
+  - component: {fileID: 8012916876685241496}
   m_Layer: 6
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -437,6 +438,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   sensitivityMultiplier: 4
+--- !u!114 &8012916876685241496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991134240871004716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bb92d024946414099041294bace0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
 --- !u!1001 &2160112265037445252
 PrefabInstance:
   m_ObjectHideFlags: 0

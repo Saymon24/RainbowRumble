@@ -3463,6 +3463,14 @@ PrefabInstance:
       propertyPath: spawnDelay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
+      propertyPath: enemiesType.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
+      propertyPath: enemiesType.Array.data[1]
+      value: 
+      objectReference: {fileID: 2776051795049151537, guid: 71f5149703971454d800739cb88e48dd, type: 3}
     - target: {fileID: 8611554650113076396, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.29

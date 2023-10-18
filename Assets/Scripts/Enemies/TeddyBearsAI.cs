@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemiesAI : MonoBehaviour
+public class TeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 

@@ -60,4 +60,9 @@ public class WeaponHolder : MonoBehaviour
         return weapons[Convert.ToInt32(selectedWeapon)];
     }
 
+    public GunData GetWeaponData()
+    {
+        return weapons[Convert.ToInt32(selectedWeapon)].GetComponent<GetGunData>().GetData();
+    }
+
 }

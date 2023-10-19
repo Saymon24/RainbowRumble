@@ -3438,6 +3438,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8113559600742334906, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+      propertyPath: gunData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3551fc8f162892442abc4bbd880d7475, type: 2}
+    - target: {fileID: 8113559600742334906, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+      propertyPath: objectToThrow
+      value: 
+      objectReference: {fileID: 6768586934458353486, guid: 6023f4f7ba3f24b41ab73bcc36c8f576, type: 3}
     - target: {fileID: 8485797435381543038, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -22,4 +22,9 @@ public class GunData : ScriptableObject
     public float reloadTime;
     [HideInInspector] public bool reloading;
 
+    [Header("Throwable")]
+    public float throwForce;
+    public float throwUpwardForce;
+    public float throwCooldown;
+
 }

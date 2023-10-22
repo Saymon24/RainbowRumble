@@ -37,11 +37,19 @@ public class UnicornAI : MonoBehaviour
         dashClockStart = Time.time;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.collider.CompareTag("Enemy"))
+        {
+            StopDashing();
+        }
+    }
+
     private void LookUpdate()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1000))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 50))
         {
             Collider[] overlap = Physics.OverlapSphere(hit.point, 0.1f);
 
@@ -52,10 +60,10 @@ public class UnicornAI : MonoBehaviour
                         if (canDash && !isDashing)
                         {
                             agent.enabled = false;
+                            rb.constraints = RigidbodyConstraints.FreezeRotation;
                             playerPosition = overlap[i].transform.position;
                             canDash = false;
                             isDashing = true;
-                            rb.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
                             dashClockStart = Time.time;
                         }
                 }
@@ -63,19 +71,25 @@ public class UnicornAI : MonoBehaviour
         }
     }
 
+    private void StopDashing()
+    {
+        isDashing = false;
+        rb.constraints = RigidbodyConstraints.None;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.Sleep();
+        dashClockStart = Time.time;
+        agent.enabled = true;
+    }
+
     private void updateDash()
     {
-        float elapsedTime = dashClockStart - Time.time;
+        float elapsedTime = Time.time - dashClockStart;
 
         if (isDashing)
         {
             if (elapsedTime > dashDuration)
-            {
-                isDashing = false;
-                rb.velocity = new Vector3(0,0,0);
-                agent.enabled = true;
-                dashDuration = Time.time;
-            }
+                StopDashing();
         } else
         {
             if (elapsedTime > timeBetweenDash)
@@ -93,6 +107,12 @@ public class UnicornAI : MonoBehaviour
 
         if (!isDashing)
             GoToPlayer();
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDashing)
+            rb.MovePosition(transform.position + (transform.forward * Time.deltaTime * dashSpeed));
     }
     private void GoToPlayer()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StuffedRabbit : MonoBehaviour
 {
@@ -50,4 +51,10 @@ public class StuffedRabbit : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, grenadeData.range);
+    }
+
 }

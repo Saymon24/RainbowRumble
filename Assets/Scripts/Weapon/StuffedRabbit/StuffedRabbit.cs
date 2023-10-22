@@ -40,9 +40,8 @@ public class StuffedRabbit : MonoBehaviour
 
         foreach(Collider nearbyObject in colliders)
         {
-            Enemy enemy = nearbyObject.GetComponent<Enemy>();
-
-            if (enemy != null)
+            
+            if (nearbyObject.TryGetComponent<Enemy>(out var enemy))
             {
                 enemy.takeDamage(grenadeData.damage);
             }

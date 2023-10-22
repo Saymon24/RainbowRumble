@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Stuffedrabbit
   damage: 80
-  range: 20
+  range: 5
   bulletSpeed: 5
   impactForce: 600
-  currentAmmo: 9375
+  currentAmmo: 1
   magSize: 1
   fireRate: 0
   reloadTime: 5
   reloading: 0
   throwForce: 10
   throwUpwardForce: 3
-  throwCooldown: 0
+  throwCooldown: 1
   timeBeforeExplosion: 3
   expodeOnImpact: 0

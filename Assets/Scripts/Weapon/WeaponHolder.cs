@@ -27,6 +27,8 @@ public class WeaponHolder : MonoBehaviour
     {
         if (Input.GetButtonDown("Switch"))
         {
+            if (weapons.Count != 2)
+                return;
             previousSelectedWeapon = selectedWeapon;
             selectedWeapon = !selectedWeapon;
         }

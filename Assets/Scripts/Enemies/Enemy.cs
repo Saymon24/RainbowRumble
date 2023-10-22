@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public float health = 100f;
     public float speed = 10f;
     public float damage = 5f;
-    public float spawnRate = 1f; // 1f -> Entity must spawn
+    public float spawnRate = 1f; // 1f -> Entity must spawn 
 
     void Start()
     {
@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage;
-        Debug.Log(health);
     }
 
     private void destroyEnemy()

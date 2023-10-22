@@ -198,7 +198,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   health: 120
-  dashSpeed: 1
+  dashSpeed: 5
+  timeBetweenDash: 3
+  dashDuration: 5
   timeBetweenAttacks: 5
 --- !u!1 &2790513358721610132
 GameObject:

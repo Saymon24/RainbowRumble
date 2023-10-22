@@ -18,9 +18,13 @@ public class UnicornAI : MonoBehaviour
 
     Vector3 playerPosition;
 
-    public int dashSpeed;
+    public int dashSpeed = 2;
+    public float timeBetweenDash = 3f;
+    public float dashDuration = 5f;
 
-    private bool chasePlayer = false;
+    private bool canDash = true;
+    private bool isDashing = false;
+    private float dashClockStart = 0f;
 
     // Attacking
     public float timeBetweenAttacks;
@@ -30,6 +34,7 @@ public class UnicornAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        dashClockStart = Time.time;
     }
 
     private void LookUpdate()
@@ -44,33 +49,51 @@ public class UnicornAI : MonoBehaviour
             {
                 if (overlap[i].CompareTag("Player"))
                 {
-                    if (!chasePlayer)
-                    {
-                        playerPosition = overlap[i].transform.position;
-                        transform.LookAt(playerPosition);
-                        chasePlayer = true;
-                    }
+                        if (canDash && !isDashing)
+                        {
+                            agent.enabled = false;
+                            playerPosition = overlap[i].transform.position;
+                            canDash = false;
+                            isDashing = true;
+                            rb.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
+                            dashClockStart = Time.time;
+                        }
                 }
             }
+        }
     }
-}
+
+    private void updateDash()
+    {
+        float elapsedTime = dashClockStart - Time.time;
+
+        if (isDashing)
+        {
+            if (elapsedTime > dashDuration)
+            {
+                isDashing = false;
+                rb.velocity = new Vector3(0,0,0);
+                agent.enabled = true;
+                dashDuration = Time.time;
+            }
+        } else
+        {
+            if (elapsedTime > timeBetweenDash)
+            {
+                canDash = true;
+                dashClockStart = Time.time;
+            }
+        }
+    }
 
     private void Update()
     {
         LookUpdate();
+        updateDash();
 
-        if (!chasePlayer)
-            ChasePlayer();
-        else
+        if (!isDashing)
             GoToPlayer();
     }
-
-    private void ChasePlayer()
-    {
-        rb.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
-        chasePlayer = false;
-    }
-
     private void GoToPlayer()
     {
         agent.SetDestination(player.position);

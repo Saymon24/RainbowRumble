@@ -8,19 +8,21 @@ public class Ammunition : MonoBehaviour
     [Header("Text")]
     [SerializeField] private TMP_Text _ammunitionText;
 
-    private int _ammunition = 0;
-    private WeaponHolder _weaponHolder;
+    private float _ammunition = 0;
+    private GunData _gunData;
 
     private void Start()
     {
-        /*_weaponHolder = GameObject.Find("Player").GetComponentInChildren<WeaponHolder>().GetSelectedWeapon();*/
+        _gunData = GameObject.Find("Player").GetComponentInChildren<WeaponHolder>().GetWeaponData();
     }
 
     private void Update()
     {
+        updateAmmunition(_gunData.currentAmmo);
+        Debug.Log(_gunData.currentAmmo);
     }
 
-    public void updateAmmunition(int ammunition)
+    private void updateAmmunition(float ammunition)
     {
         _ammunition = ammunition;
         _ammunitionText.text = _ammunition.ToString();

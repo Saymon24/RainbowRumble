@@ -280,7 +280,7 @@ Rigidbody:
   m_GameObject: {fileID: 2776051795049151537}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 100
+  m_Drag: 50
   m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4968316180452280034}
-  rb: {fileID: 0}
+  rb: {fileID: -6995282873368619187}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

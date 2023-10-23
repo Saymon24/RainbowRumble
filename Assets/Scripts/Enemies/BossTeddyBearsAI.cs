@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class BossTeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
-    private NavMeshPath path;
+    //private NavMeshPath path;
     [SerializeField] private Rigidbody rb;
 
     private Transform player;
@@ -28,7 +28,7 @@ public class BossTeddyBearsAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        path = new NavMeshPath();
+        //path = new NavMeshPath();
     }
 
     private void FixedUpdate()
@@ -62,8 +62,7 @@ public class BossTeddyBearsAI : MonoBehaviour
 
         Vector3 destination = player.position;
 
-        Debug.Log(destination);
-
+        NavMeshPath path = new NavMeshPath();
         if (NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path))
         {
             // Ajustez les positions des waypoints du chemin.

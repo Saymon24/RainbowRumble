@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32213989063014475}
-  m_Layer: 6
+  m_Layer: 30
   m_Name: EndGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7174365993652400005}
-  m_Layer: 6
+  m_Layer: 30
   m_Name: GunTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3536178259145389390}
   - component: {fileID: 2432736983531860150}
-  m_Layer: 6
+  m_Layer: 30
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 7756106662570733729}
   - component: {fileID: 3384787214715182688}
   - component: {fileID: 2846206035987298745}
-  m_Layer: 6
+  m_Layer: 30
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5056,7 +5056,7 @@ GameObject:
   - component: {fileID: 528298854132347474}
   - component: {fileID: 1314153927712696533}
   - component: {fileID: 745920820758335191}
-  m_Layer: 6
+  m_Layer: 30
   m_Name: NarfPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5219,27 +5219,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7640558969779515294, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -7146521406498821007, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -1935240392164132181, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -1599826595754709761, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -516098083770646512, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Name
@@ -5247,19 +5247,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6824746026288583490, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7082970914767789158, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8416272007918961125, guid: 9ccc6dc64e2577640b927072807ec178, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6740539403599183181}
   - component: {fileID: 213825325105394453}
   - component: {fileID: 1642213364151918811}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
     layer: 0
     connect: {fileID: 0}
   limitations:
-    byCollision: 1
+    byCollision: 0
     solidity: 0.1
     tag: Untagged
     depth: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
-    fadeType: 0
+    fadeType: 3
     fadeTime: 5
     sizeFilter: 0
     shardAmount: 5
@@ -281,7 +281,7 @@ MonoBehaviour:
     damage: 1
     connectivity: 0
     action: 0
-    destroyDelay: 1
+    destroyDelay: 0
     mesh: 4
     fragments: 0
   initialized: 0

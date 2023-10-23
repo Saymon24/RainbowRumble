@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TeddyBearsAI : MonoBehaviour
+public class BossTeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     [SerializeField] private Rigidbody rb;

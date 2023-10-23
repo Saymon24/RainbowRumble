@@ -14,8 +14,6 @@ public class UnicornAI : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
-
     Vector3 playerPosition;
 
     public int dashSpeed = 2;
@@ -136,18 +134,6 @@ public class UnicornAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-
-        if (health < 0f) Invoke(nameof(DestroyEnemy), .5f);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
 }

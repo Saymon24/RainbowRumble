@@ -47,6 +47,8 @@ public class WeaponHolder : MonoBehaviour
             if (i == Convert.ToInt32(selectedWeapon))
             {
                 weapon.gameObject.SetActive(true);
+                GameObject socket = GameObject.Find("WeaponSocket");
+                weapon.gameObject.transform.position = socket.transform.position;
             }
             else
             {

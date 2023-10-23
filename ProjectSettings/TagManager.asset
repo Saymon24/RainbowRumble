@@ -7,6 +7,7 @@ TagManager:
   - PlayerGun
   - Box
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

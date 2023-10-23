@@ -76,6 +76,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e51dc30b9ae49584686d051bddff5864, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4174059622808682003}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e51dc30b9ae49584686d051bddff5864, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 184219934690504615}
   m_SourcePrefab: {fileID: 100100000, guid: e51dc30b9ae49584686d051bddff5864, type: 3}
 --- !u!1 &6768586934458353486 stripped
 GameObject:
@@ -130,3 +133,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.396914, y: 1.4535549, z: 1}
   m_Center: {x: -0.02357592, y: 0.053339936, z: 0}
+--- !u!114 &184219934690504615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768586934458353486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab3f4de7f7bd6e499c0e1c7c52db18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadeData: {fileID: 11400000, guid: 3551fc8f162892442abc4bbd880d7475, type: 2}
+  explosionParticles: {fileID: 4916121599760827979, guid: 8cf77325036b4bc4980797b3ac6833a4, type: 3}

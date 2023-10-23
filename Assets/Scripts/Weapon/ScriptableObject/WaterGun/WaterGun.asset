@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: WaterGun
   m_EditorClassIdentifier: 
   name: WaterGun
-  damage: 1
+  damage: 5
   range: 1000
   bulletSpeed: 3000
   impactForce: 1.5
-  currentAmmo: 87.16686
+  currentAmmo: 100
   magSize: 100
   fireRate: 10
   reloadTime: 0
   reloading: 0
+  throwForce: 0
+  throwUpwardForce: 0
+  throwCooldown: 0

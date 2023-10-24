@@ -22,7 +22,7 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     // Test
 
-    public float spreadAmount = 1.0f; // Ajustez cette valeur pour contrôler l'écartement.
+    public float spreadAmount = 5.0f; // Ajustez cette valeur pour contrôler l'écartement.
 
     private void Awake()
     {
@@ -58,8 +58,6 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        //agent.SetDestination(player.position);
-
         Vector3 destination = player.position;
 
         NavMeshPath path = new NavMeshPath();

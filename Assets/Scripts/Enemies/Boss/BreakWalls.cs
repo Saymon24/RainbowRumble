@@ -1,3 +1,4 @@
+using EZCameraShake;
 using RayFire;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using UnityEngine.AI;
 
 public class BreakWalls : MonoBehaviour
 {
+    private Transform playerTransform;
+
     [Header("Settings")]
     [SerializeField] private LayerMask breakableWallsLayer;
     [SerializeField] private RayfireGun handsGun;
@@ -14,6 +17,12 @@ public class BreakWalls : MonoBehaviour
 
     [SerializeField] private Transform handsPosition;
     [SerializeField] private Transform legsPosition;
+
+    //private CameraShake cameraShake;
+    [SerializeField] private LayerMask whatIsPlayer;
+
+    [Header("Range Settings")]
+    [SerializeField] private float shakeRange = 5f;
 
     private Ray handRay;
     private Ray legRay;
@@ -24,6 +33,11 @@ public class BreakWalls : MonoBehaviour
     // For Testing
     private float startCounter = 0.0f;
 
+    private void Start()
+    {
+        playerTransform = GameObject.Find("Player").transform;
+    }
+
     public bool BehindWall()
     {
         return handsHasWall || legsHasWall;
@@ -31,12 +45,29 @@ public class BreakWalls : MonoBehaviour
 
     public void breakWallsWithArms()
     {
-        handsGun.Shoot();   
+        handsGun.Shoot();
+        applyShakeEffect();
     }
 
     public void breakWallsWithLegs()
     {
         legsGun.Shoot();
+        applyShakeEffect();
+    }
+
+    private bool isPlayerInRange()
+    {
+        return Physics.CheckSphere(transform.position, shakeRange, whatIsPlayer);
+    }
+
+    public void applyShakeEffect()
+    {
+        float dist = Vector3.Distance(playerTransform.position, transform.position);
+
+        if (isPlayerInRange())
+        {
+            CameraShaker.Instance.ShakeOnce(30 / dist, 4f, 0.5f, 0.5f);
+        }
     }
 
     private void checkHands()

@@ -294,7 +294,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -379,6 +379,10 @@ MonoBehaviour:
   range: 3
   handsPosition: {fileID: 5977788847242162103}
   legsPosition: {fileID: 3104529532970445451}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 2147483648
+  shakeRange: 30
 --- !u!114 &7652399580778652637
 MonoBehaviour:
   m_ObjectHideFlags: 0

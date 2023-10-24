@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class BossTeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
+    //private NavMeshPath path;
     [SerializeField] private Rigidbody rb;
 
     private Transform player;
@@ -19,25 +20,60 @@ public class BossTeddyBearsAI : MonoBehaviour
     public float attackRange;
     public bool playerInAttackRange;
 
+    // Test
+
+    public float spreadAmount = 20.0f; // Ajustez cette valeur pour contrôler l'écartement.
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        //path = new NavMeshPath();
     }
 
     private void Update()
     {
+        if (agent.hasPath)
+        {
+            Vector3[] waypoints = agent.path.corners;
+            for (int i = 0; i < waypoints.Length - 1; i++)
+            {
+                Debug.DrawLine(waypoints[i], waypoints[i + 1], Color.red);
+            }
+        }
+
         // Check for sight and attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInAttackRange) ChasePlayer();
+        if (GetComponent<BreakWalls>().BehindWall()) StopDestination();
+        else if (!playerInAttackRange) ChasePlayer();
         else AttackPlayer();
 
-}
+    }
+
+    private void StopDestination()
+    {
+        agent.SetDestination(transform.position);
+    }
 
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+
+/*        Vector3 destination = player.position;
+
+        NavMeshPath path = new NavMeshPath();
+        if (NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path))
+        {
+            // Ajustez les positions des waypoints du chemin.
+            for (int i = 0; i < path.corners.Length; i++)
+            {
+                Vector3 originalPosition = path.corners[i];
+                Vector3 offset = (Random.insideUnitSphere * spreadAmount);
+                path.corners[i] = originalPosition + offset;
+            }
+            agent.SetPath(path);
+        }*/
     }
 
     private void AttackPlayer()

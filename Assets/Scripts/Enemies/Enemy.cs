@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    private NavMeshAgent agent;
+
     [Header("Enemy Settings")]
     public float health = 100f;
     public float speed = 10f;
@@ -12,7 +15,8 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
     }
 
     void Update()

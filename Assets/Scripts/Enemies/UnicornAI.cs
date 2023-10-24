@@ -37,8 +37,9 @@ public class UnicornAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.collider.CompareTag("Enemy"))
+        if (!collision.collider.CompareTag("Enemy") && !collision.collider.CompareTag("Untagged"))
         {
+            Debug.Log(collision.collider.tag);
             StopDashing();
         }
     }

@@ -22,7 +22,7 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     // Test
 
-    public float spreadAmount = 5.0f; // Ajustez cette valeur pour contrôler l'écartement.
+    public float spreadAmount = 20.0f; // Ajustez cette valeur pour contrôler l'écartement.
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class BossTeddyBearsAI : MonoBehaviour
         //path = new NavMeshPath();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (agent.hasPath)
         {
@@ -58,7 +58,9 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        Vector3 destination = player.position;
+        agent.SetDestination(player.position);
+
+/*        Vector3 destination = player.position;
 
         NavMeshPath path = new NavMeshPath();
         if (NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path))
@@ -71,7 +73,7 @@ public class BossTeddyBearsAI : MonoBehaviour
                 path.corners[i] = originalPosition + offset;
             }
             agent.SetPath(path);
-        }
+        }*/
     }
 
     private void AttackPlayer()

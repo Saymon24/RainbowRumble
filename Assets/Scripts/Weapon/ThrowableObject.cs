@@ -76,4 +76,9 @@ public class ThrowableObject : MonoBehaviour
         return gunData.reloadTime - (Time.time - timerToRefill);
     }
 
+    public int GetCurrentNumberofThrowableAvailaible()
+    {
+        return (int)gunData.currentAmmo;
+    }
+
 }

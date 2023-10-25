@@ -26,5 +26,7 @@ public class GunData : ScriptableObject
     public float throwForce;
     public float throwUpwardForce;
     public float throwCooldown;
+    public float timeBeforeExplosion;
+    public bool expodeOnImpact;
 
 }

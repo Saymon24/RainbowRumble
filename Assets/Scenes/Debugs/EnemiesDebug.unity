@@ -2476,15 +2476,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 165711248712964620, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.669
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 165711248712964620, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.07
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 165711248712964620, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.109
+      value: -2.79
       objectReference: {fileID: 0}
     - target: {fileID: 165711248712964620, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4334,7 +4334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 329051691417030727, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: isSpawned
@@ -4342,11 +4342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: spawnRate
-      value: 0.05
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: spawnDelay
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: enemiesType.Array.size
@@ -4548,12 +4548,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865833436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 156df493bbb49c446903e5f7d4e3d283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUpdate: 1
+  isUpdate: 0
   NavMeshUpdateTime: 1.2
 --- !u!1 &1875825560
 GameObject:

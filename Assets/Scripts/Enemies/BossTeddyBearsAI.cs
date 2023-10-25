@@ -28,7 +28,6 @@ public class BossTeddyBearsAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        //path = new NavMeshPath();
     }
 
     private void Update()
@@ -47,7 +46,7 @@ public class BossTeddyBearsAI : MonoBehaviour
 
         if (GetComponent<BreakWalls>().BehindWall()) StopDestination();
         else if (!playerInAttackRange) ChasePlayer();
-        else AttackPlayer();
+        else HandleAttack();
 
     }
 
@@ -59,33 +58,19 @@ public class BossTeddyBearsAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-
-/*        Vector3 destination = player.position;
-
-        NavMeshPath path = new NavMeshPath();
-        if (NavMesh.CalculatePath(transform.position, destination, NavMesh.AllAreas, path))
-        {
-            // Ajustez les positions des waypoints du chemin.
-            for (int i = 0; i < path.corners.Length; i++)
-            {
-                Vector3 originalPosition = path.corners[i];
-                Vector3 offset = (Random.insideUnitSphere * spreadAmount);
-                path.corners[i] = originalPosition + offset;
-            }
-            agent.SetPath(path);
-        }*/
     }
 
-    private void AttackPlayer()
+    private void HandleAttack()
     {
         // Stop moving enemies
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
+            GetComponent<Enemy>().AttackPlayer();
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

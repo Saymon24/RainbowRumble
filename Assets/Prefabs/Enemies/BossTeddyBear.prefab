@@ -420,9 +420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  speed: 10
+  speed: 7
   damage: 10
-  spawnRate: 0.1
+  spawnRate: 0.02
 --- !u!1 &4132123499242391599
 GameObject:
   m_ObjectHideFlags: 0

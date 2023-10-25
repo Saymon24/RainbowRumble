@@ -196,7 +196,7 @@ MonoBehaviour:
     m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2147483648
   health: 120
   dashSpeed: 30
   timeBetweenDash: 3

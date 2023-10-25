@@ -15,15 +15,33 @@ public class SpawnStation : MonoBehaviour
     [Header("Angle per second")]
     [SerializeField] private float rotateSpeed = 180f;
 
+    [Header("Rarity Light Color")]
+    [SerializeField] private RarityColor rarityColor;
+    [Header("Materials in order of rarity")]
+    [SerializeField] private List<Material> rarityMaterial;
+    [SerializeField] private bool randomColor;
+
     private float timer;
     private GameObject currentInstance;
-
     private Vector3 initialPosition;
+    private ParticleSystemRenderer rarityPart;
+    private Dictionary<int, Material> colorPair;
 
     private int index;
     // Start is called before the first frame update
     void Start()
     {
+
+        colorPair = new Dictionary<int, Material>();
+
+        int i = 0;
+        
+        foreach(Material mat in rarityMaterial)
+        {
+            colorPair.Add(i, mat);
+            i++;
+        }
+
        index = Random.Range(0, weaponsToSpawn.Length);
 
         if (ChangedWeapon)
@@ -38,6 +56,11 @@ public class SpawnStation : MonoBehaviour
 
         currentInstance = Instantiate(weaponsToSpawn[index], weaponSpawnPoint.position, Quaternion.identity);
         initialPosition = currentInstance.transform.position;
+
+        rarityPart = GetComponentInChildren<ParticleSystem>().GetComponent<ParticleSystemRenderer>();
+        rarityPart.material = colorPair[(int)rarityColor];
+        rarityPart.trailMaterial = colorPair[(int)rarityColor];
+
     }
 
     private void Update()
@@ -54,6 +77,15 @@ public class SpawnStation : MonoBehaviour
                     index = 0;
 
                 currentInstance = Instantiate(weaponsToSpawn[index], weaponSpawnPoint.position, Quaternion.identity);
+
+                if (randomColor)
+                {
+                    int rColor = Random.Range(0, 6);
+
+                    rarityPart.material = colorPair[rColor];
+                    rarityPart.trailMaterial = colorPair[rColor];
+                }
+
                 timer = Time.time;
             }
         }

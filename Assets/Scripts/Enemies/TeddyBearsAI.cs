@@ -5,12 +5,11 @@ using UnityEngine.AI;
 public class TeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
+    [SerializeField] private Rigidbody rb;
 
     private Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
-
-    public float health;
 
     // Attacking
     public float timeBetweenAttacks;
@@ -33,7 +32,8 @@ public class TeddyBearsAI : MonoBehaviour
 
         if (!playerInAttackRange) ChasePlayer();
         else AttackPlayer();
-    }
+
+}
 
     private void ChasePlayer()
     {
@@ -57,18 +57,6 @@ public class TeddyBearsAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-
-        if (health < 0f) Invoke(nameof(DestroyEnemy), .5f);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

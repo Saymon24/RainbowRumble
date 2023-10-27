@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private float health = 100f;
+    [SerializeField] public float health = 100f;
     private bool isAlive = true;
 
     void Start()
     {
-        
     }
 
     void Update()

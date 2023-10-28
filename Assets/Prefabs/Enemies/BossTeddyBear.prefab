@@ -419,10 +419,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e67e340b4f1a184592341f07c5a213c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   health: 200
   speed: 7
   damage: 10
   spawnRate: 0.02
+  droppablePowerUp:
+  - powerUp: {fileID: 6934815424580783200, guid: 9b659018ea212484abebccc668bef652, type: 3}
+    spawnRate: 0.6
+    rarityRate:
+    - 0
+    - 0
+    - 0.5
+    - 0.4
+    - 0.1
+  - powerUp: {fileID: 1700308846637323995, guid: 63bdd89c00a4f3a4fa7db53a58701d2f, type: 3}
+    spawnRate: 0.5
+    rarityRate:
+    - 0
+    - 0
+    - 0.5
+    - 0.4
+    - 0.1
 --- !u!1 &4132123499242391599
 GameObject:
   m_ObjectHideFlags: 0

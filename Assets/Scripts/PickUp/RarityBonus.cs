@@ -20,7 +20,7 @@ public class RarityBonus : MonoBehaviour
     private ParticleSystemRenderer rarityPart;
     private Dictionary<int, Material> colorPair;
 
-    void Start()
+    void Awake()
     {
         colorPair = new Dictionary<int, Material>();
 
@@ -37,7 +37,15 @@ public class RarityBonus : MonoBehaviour
         rarityPart = GetComponentInChildren<ParticleSystem>().GetComponent<ParticleSystemRenderer>();
         rarityPart.material = colorPair[(int)rarityColor];
         rarityPart.trailMaterial = colorPair[(int)rarityColor];
+    }
 
+    public void setRarity(int rarityIndex)
+    {
+        if (rarityIndex < 0 || rarityIndex >= rarityMaterial.Count)
+            return;
+
+        rarityPart.material = rarityMaterial[rarityIndex];
+        rarityPart.trailMaterial = rarityMaterial[rarityIndex];
     }
 
     private void Update()

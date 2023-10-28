@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class BiberonEffects : MonoBehaviour
 {
-    //[SerializeField] private float effectMultiplicator = 15f;
+    private float[] effectMultiplicator = { 1.2f, 1.3f, 1.4f, 1.7f, 2.0f};
+    private int rarity = 0;
 
-    private void Update()
+    public void applyEffect()
     {
-        GetComponent<PlayerManager>().health = 120f;
+        if (GetComponent<PlayerManager>().health * effectMultiplicator[rarity] > GetComponent<PlayerManager>().maxHealth)
+            GetComponent<PlayerManager>().health = GetComponent<PlayerManager>().maxHealth;
+        else
+            GetComponent<PlayerManager>().health = GetComponent<PlayerManager>().health * effectMultiplicator[rarity];
         Destroy(this.GetComponent<BiberonEffects>());
+    }
+
+    public void setNewRarity(int rarityIndex)
+    {
+        if (rarityIndex < 0 || rarityIndex >= effectMultiplicator.Length)
+            return;
+
+        rarity = rarityIndex;
     }
 }

@@ -197,13 +197,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   health: 120
   speed: 5
   damage: 5
   spawnRate: 0.8
   droppablePowerUp:
   - powerUp: {fileID: 6934815424580783200, guid: 9b659018ea212484abebccc668bef652, type: 3}
-    spawnRate: 0.1
+    spawnRate: 0.02
+    rarityRate:
+    - 0.4
+    - 0.4
+    - 0.1
+    - 0.08
+    - 0.02
   - powerUp: {fileID: 1700308846637323995, guid: 63bdd89c00a4f3a4fa7db53a58701d2f, type: 3}
-    spawnRate: 0.1
+    spawnRate: 0.02
+    rarityRate:
+    - 0.4
+    - 0.4
+    - 0.1
+    - 0.08
+    - 0.02

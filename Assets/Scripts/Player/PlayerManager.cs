@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] public float maxHealth = 150f;
     [SerializeField] public float health = 100f;
+
     private bool isAlive = true;
 
     void Start()

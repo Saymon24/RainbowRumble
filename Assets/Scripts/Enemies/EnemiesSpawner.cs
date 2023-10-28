@@ -25,7 +25,7 @@ public class EnemiesSpawner : MonoBehaviour
         if (enemiesType.Length <= 0)
             return;
 
-        float randomValue = Random.Range(0.0f, 1.0f);
+        float randomValue = Mathf.Round(UnityEngine.Random.Range(0.0f, 1.0f) * 10.0f) * 0.1f;
         float cumulativeRate = 0;
 
         for (int i = 0; i < enemiesType.Length; i++)
@@ -55,7 +55,7 @@ public class EnemiesSpawner : MonoBehaviour
     {
         float elapsedTime = Time.time - startSpawnTime;
 
-        if (isSpawned && elapsedTime > spawnDelay && Random.Range(0.0f, 1.0f) <= spawnRate)
+        if (isSpawned && elapsedTime > spawnDelay && (Mathf.Round(UnityEngine.Random.Range(0.0f, 1.0f) * 10.0f) * 0.1f) <= spawnRate)
         {
             spawnEnemy();
             resetSpawner();

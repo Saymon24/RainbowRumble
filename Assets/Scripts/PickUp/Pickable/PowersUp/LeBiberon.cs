@@ -6,7 +6,8 @@ public class LeBiberon : MonoBehaviour
 {
     public void giveEffects()
     {
-        GameObject.Find("Player").AddComponent<BiberonEffects>();
+        BiberonEffects effect = GameObject.Find("Player").AddComponent<BiberonEffects>();
+        effect.setNewRarity(GetComponent<RarityPowerUp>().getRarity());
+        effect.applyEffect();
     }
-
 }

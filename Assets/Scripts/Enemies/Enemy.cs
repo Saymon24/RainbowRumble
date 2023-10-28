@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         public GameObject powerUp;
         public float spawnRate;
+        public float[] rarityRate;
     }
 
     public DroppablePowerUp[] droppablePowerUp;
@@ -33,7 +34,6 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         player = GameObject.Find("Player");
-        //groundLayer = LayerMask.NameToLayer("Ground");
     }
 
     void Update()
@@ -52,6 +52,30 @@ public class Enemy : MonoBehaviour
         player.GetComponent<PlayerManager>().takeDamage(damage);
     }
 
+    private int GetRarityPowerUp(int powerUpIndex)
+    {
+        if (droppablePowerUp.Length <= powerUpIndex)
+            return 0;
+        if (droppablePowerUp[powerUpIndex].rarityRate.Length == 0)
+            return 0;
+
+        float randomValue = Mathf.Round(UnityEngine.Random.Range(0.0f, 1.0f) * 10.0f) * 0.1f;
+        float cumulativeRate = 0;
+
+        for (int i = 0; i < droppablePowerUp[powerUpIndex].rarityRate.Length; i++)
+        {
+            float spawnRate = 0;
+
+            spawnRate = droppablePowerUp[powerUpIndex].rarityRate[i];
+
+            cumulativeRate += spawnRate;
+
+            if (randomValue <= cumulativeRate)
+                return i;
+        }
+        return 0;
+    }
+
     private void SpawnPowerUp()
     {
         if (droppablePowerUp.Length == 0)
@@ -63,15 +87,13 @@ public class Enemy : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, float.PositiveInfinity, groundLayer))
         {
             groundPos = hit.point;
-            Debug.Log("OUI");
         }
         else
         {
-            Debug.Log("NON");
             return;
         }
 
-        float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
+        float randomValue = Mathf.Round(UnityEngine.Random.Range(0.0f, 1.0f) * 10.0f) * 0.1f;
         float cumulativeRate = 0;
 
         for (int i = 0; i < droppablePowerUp.Length; i++)
@@ -80,11 +102,14 @@ public class Enemy : MonoBehaviour
 
             spawnRate = droppablePowerUp[i].spawnRate;
 
-            cumulativeRate += spawnRate;
+            cumulativeRate = cumulativeRate + spawnRate;
 
             if (randomValue <= cumulativeRate)
             {
-                Instantiate(droppablePowerUp[i].powerUp, groundPos, Quaternion.identity);
+                GameObject powerUp = Instantiate(droppablePowerUp[i].powerUp, groundPos, Quaternion.identity);
+                int rarityChoosen = GetRarityPowerUp(i);
+
+                powerUp.GetComponent<RarityPowerUp>().setRarity(rarityChoosen);
                 break;
             }
         }

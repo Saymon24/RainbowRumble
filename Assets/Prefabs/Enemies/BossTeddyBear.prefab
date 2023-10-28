@@ -428,7 +428,7 @@ MonoBehaviour:
   spawnRate: 0.02
   droppablePowerUp:
   - powerUp: {fileID: 6934815424580783200, guid: 9b659018ea212484abebccc668bef652, type: 3}
-    spawnRate: 0.6
+    spawnRate: 0.33
     rarityRate:
     - 0
     - 0
@@ -436,7 +436,15 @@ MonoBehaviour:
     - 0.4
     - 0.1
   - powerUp: {fileID: 1700308846637323995, guid: 63bdd89c00a4f3a4fa7db53a58701d2f, type: 3}
-    spawnRate: 0.5
+    spawnRate: 0.33
+    rarityRate:
+    - 0
+    - 0
+    - 0.5
+    - 0.4
+    - 0.1
+  - powerUp: {fileID: 5941147423699670534, guid: 78905b42e766d7745b3ac2532e7e9958, type: 3}
+    spawnRate: 0.33
     rarityRate:
     - 0
     - 0

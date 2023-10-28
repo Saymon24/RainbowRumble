@@ -3,7 +3,13 @@ guid: 539af9294e17d044d9ef961ac49363bd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - defaultGunData: {fileID: 11400000, guid: 280a0dc43aef6b842a87440f28da991a, type: 2}
+  - gunEnd: {instanceID: 0}
+  - muzzleFlash: {instanceID: 0}
+  - impactEffect: {instanceID: 0}
+  - beam: {instanceID: 0}
+  - fpsCam: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

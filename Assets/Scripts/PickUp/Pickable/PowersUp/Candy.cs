@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Candy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void giveEffects()
     {
-        
-    }
+        if (GameObject.Find("WeaponHolder").GetComponent<CandyEffects>())
+        {
+            CandyEffects effect = GameObject.Find("WeaponHolder").GetComponent<CandyEffects>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (effect.getRarity() <= GetComponent<RarityPowerUp>().getRarity())
+            {
+                CandyEffects newEffect = GameObject.Find("WeaponHolder").AddComponent<CandyEffects>();
+                newEffect.setNewRarity(GetComponent<RarityPowerUp>().getRarity());
+
+                // Destroy old instance
+                Destroy(effect);
+            }
+            else
+            {
+                effect.ResetTime();
+            }
+        }
+        else
+        {
+            CandyEffects effect = GameObject.Find("WeaponHolder").AddComponent<CandyEffects>();
+            effect.setNewRarity(GetComponent<RarityPowerUp>().getRarity());
+        }
     }
 }

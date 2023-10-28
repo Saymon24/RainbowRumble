@@ -197,6 +197,14 @@ MonoBehaviour:
     - 0.1
     - 0.08
     - 0.02
+  - powerUp: {fileID: 5941147423699670534, guid: 78905b42e766d7745b3ac2532e7e9958, type: 3}
+    spawnRate: 0.02
+    rarityRate:
+    - 0.4
+    - 0.4
+    - 0.1
+    - 0.08
+    - 0.02
 --- !u!114 &6342979723213836166
 MonoBehaviour:
   m_ObjectHideFlags: 0

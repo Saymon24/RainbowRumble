@@ -5120,7 +5120,7 @@ MonoBehaviour:
   rounds: 3
   rate: 0.3
   type: 0
-  strength: 15
+  strength: 8
   radius: 0.75
   demolishCluster: 1
   affectInactive: 1

@@ -165,7 +165,7 @@ MonoBehaviour:
   showGizmo: 1
   rangeType: 0
   fadeType: 0
-  range: 10
+  range: 13.8
   deletion: 0
   strength: 1.25
   variation: 50

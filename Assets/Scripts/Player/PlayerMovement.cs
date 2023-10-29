@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
 
+    public float speedMultiplicator = 1f;
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -34,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(speed * Time.deltaTime * move);
+        controller.Move(speed * speedMultiplicator * Time.deltaTime * move);
 
         if (Input.GetButton("Jump") && isGrounded)
         {

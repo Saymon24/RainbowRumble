@@ -73,6 +73,7 @@ public class Gun : MonoBehaviour
     private void Shoot()
     {
         GameObject createdBullet = Instantiate(Bullet, gunEnd.position, gunEnd.rotation);
+        float damageMultiplicator = GetComponent<WeaponDatasMultiplicator>().damageMultiplicator;
         RaycastHit hit;
         
         createdBullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(new Vector3(0, 0, gunData.bulletSpeed));
@@ -90,7 +91,7 @@ public class Gun : MonoBehaviour
                 if (overlap[i].CompareTag("Enemy"))
                 {
                     Debug.Log("Touché");
-                    overlap[i].GetComponent<Enemy>().takeDamage(gunData.damage);
+                    overlap[i].GetComponent<Enemy>().takeDamage(gunData.damage * damageMultiplicator);
                 }
             }
             rayfireGun.Shoot();

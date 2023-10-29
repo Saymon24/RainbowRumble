@@ -5117,17 +5117,17 @@ MonoBehaviour:
   axis: 0
   maxDistance: 100
   target: {fileID: 7174365993652400005}
-  rounds: 2
+  rounds: 3
   rate: 0.3
   type: 0
-  strength: 10
+  strength: 8
   radius: 0.75
   demolishCluster: 1
   affectInactive: 1
   rigid: 1
   rigidRoot: 1
   rigidBody: 1
-  damage: 100
+  damage: 10
   debris: 1
   dust: 1
   flash: 0

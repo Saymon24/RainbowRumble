@@ -37,8 +37,9 @@ public class UnicornAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.collider.CompareTag("Enemy"))
+        if (!collision.collider.CompareTag("Enemy") && !collision.collider.CompareTag("Untagged"))
         {
+            HandleAttack();
             StopDashing();
         }
     }
@@ -117,16 +118,17 @@ public class UnicornAI : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    private void AttackPlayer()
+    private void HandleAttack()
     {
-        // Stop moving enemies
-        agent.SetDestination(transform.position);
-
-        transform.LookAt(player);
+        //transform.LookAt(player);
+        agent.enabled = true;
+        agent.SetDestination(player.position);
+        agent.enabled = false;
 
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
+            GetComponent<Enemy>().AttackPlayer();
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

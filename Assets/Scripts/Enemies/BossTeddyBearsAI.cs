@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class BossTeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
+    //private NavMeshPath path;
     [SerializeField] private Rigidbody rb;
 
     private Transform player;
@@ -19,6 +20,10 @@ public class BossTeddyBearsAI : MonoBehaviour
     public float attackRange;
     public bool playerInAttackRange;
 
+    // Test
+
+    public float spreadAmount = 20.0f; // Ajustez cette valeur pour contrôler l'écartement.
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -27,29 +32,45 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     private void Update()
     {
+        if (agent.hasPath)
+        {
+            Vector3[] waypoints = agent.path.corners;
+            for (int i = 0; i < waypoints.Length - 1; i++)
+            {
+                Debug.DrawLine(waypoints[i], waypoints[i + 1], Color.red);
+            }
+        }
+
         // Check for sight and attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInAttackRange) ChasePlayer();
-        else AttackPlayer();
+        if (GetComponent<BreakWalls>().BehindWall()) StopDestination();
+        else if (!playerInAttackRange) ChasePlayer();
+        else HandleAttack();
 
-}
+    }
+
+    private void StopDestination()
+    {
+        agent.SetDestination(transform.position);
+    }
 
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
     }
 
-    private void AttackPlayer()
+    private void HandleAttack()
     {
         // Stop moving enemies
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
+            GetComponent<Enemy>().AttackPlayer();
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

@@ -31,7 +31,7 @@ public class TeddyBearsAI : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInAttackRange) ChasePlayer();
-        else AttackPlayer();
+        else HandleAttack();
 
 }
 
@@ -40,16 +40,17 @@ public class TeddyBearsAI : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    private void AttackPlayer()
+    private void HandleAttack()
     {
         // Stop moving enemies
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
             alreadyAttacked = true;
+            GetComponent<Enemy>().AttackPlayer();
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

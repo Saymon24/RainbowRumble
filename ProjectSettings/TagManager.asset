@@ -38,8 +38,8 @@ TagManager:
   - 
   - 
   - 
-  - 
   - FPSLayer
+  - Interface
   - Player
   m_SortingLayers:
   - name: Default

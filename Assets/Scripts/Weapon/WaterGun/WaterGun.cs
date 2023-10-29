@@ -27,6 +27,7 @@ public class WaterGun : MonoBehaviour
     private void Awake()
     {
         createdBeam = Instantiate(beam);
+        createdBeam.transform.parent = transform;
         createdBeam.GetComponentInChildren<WaterGunParticles>().InitGunData(gunData);
 
         particleBeam = createdBeam.GetComponentInChildren<ParticleSystem>();
@@ -94,6 +95,8 @@ public class WaterGun : MonoBehaviour
 
     void Update()
     {
+        particleBeam.GetComponent<WaterGunParticles>().UpdateDamageMultiplicator(GetComponent<WeaponDatasMultiplicator>().damageMultiplicator);
+
         if (Input.GetButton("Fire1"))
         {
             if (gunData.currentAmmo > 0)

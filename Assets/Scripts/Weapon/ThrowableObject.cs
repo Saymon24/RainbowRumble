@@ -38,6 +38,9 @@ public class ThrowableObject : MonoBehaviour
         GameObject projectile = Instantiate(objectToThrow, attackPoint.position, Fpscam.rotation);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
+        if (GameObject.Find("Player").GetComponent<CandyEffects>())
+            projectile.GetComponent<WeaponDatasMultiplicator>().damageMultiplicator = GameObject.Find("Player").GetComponent<CandyEffects>().getEffectMultiplicator();
+
         Vector3 forceToApply = Fpscam.transform.forward * gunData.throwForce + transform.up * gunData.throwUpwardForce;
 
         rb.AddForce(forceToApply, ForceMode.Impulse);

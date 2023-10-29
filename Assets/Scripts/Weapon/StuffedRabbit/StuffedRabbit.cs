@@ -11,7 +11,7 @@ public class StuffedRabbit : MonoBehaviour
     private RayfireBomb rayfireBomb;
 
     private float countDown;
-    private float explosionCountDown = 0.025f;
+    private float explosionCountDown = 0.05f;
     private bool hasExploded;
 
     // Start is called before the first frame update
@@ -47,17 +47,15 @@ public class StuffedRabbit : MonoBehaviour
 
     private void Explode()
     {
+        float damageMultiplicator = GetComponent<WeaponDatasMultiplicator>().damageMultiplicator;
+
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
         Collider[] colliders = Physics.OverlapSphere(transform.position, grenadeData.range);
 
         foreach(Collider nearbyObject in colliders)
         {
-            
             if (nearbyObject.TryGetComponent<Enemy>(out var enemy))
-            {
-                enemy.takeDamage(grenadeData.damage);
-            }
-
+                enemy.takeDamage(grenadeData.damage * damageMultiplicator);
         }
     }
 
@@ -65,5 +63,4 @@ public class StuffedRabbit : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, grenadeData.range);
     }
-
 }

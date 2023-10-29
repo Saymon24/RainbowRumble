@@ -165,7 +165,7 @@ MonoBehaviour:
   showGizmo: 1
   rangeType: 0
   fadeType: 0
-  range: 8
+  range: 10
   deletion: 0
   strength: 1.25
   variation: 50
@@ -173,7 +173,7 @@ MonoBehaviour:
   forceByMass: 1
   affectInactive: 1
   affectKinematic: 0
-  heightOffset: -2
+  heightOffset: 0
   delay: 0
   atStart: 0
   destroy: 0

@@ -25,15 +25,15 @@ public class Reloading : MonoBehaviour
         {
             if (_weaponData.reloading && !_justReloaded)
             {
-                _startedReloadTime = Time.time;
-                _currentReloadTime = Time.time;
+                _currentReloadTime = 0;
                 _slider.value = 0;
                 _slider.gameObject.SetActive(true);
                 _justReloaded = true;
             } else if (_weaponData.reloading && _justReloaded)
             {
-                _slider.value = _currentReloadTime * 100 / (_startedReloadTime + _weaponData.reloadTime);
-                _currentReloadTime = Time.time;
+                _slider.maxValue = _weaponData.reloadTime;
+                _slider.value = _currentReloadTime;
+                _currentReloadTime += Time.deltaTime;
             } else if (!_weaponData.reloading && _justReloaded)
             {
                 _slider.gameObject.SetActive(false);

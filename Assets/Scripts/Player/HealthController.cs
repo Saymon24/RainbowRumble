@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     [Header("Player Health Amount")]
-    public float currentPlayerHealth = 100.0f;
     [SerializeField] private float maxPlayerHealth = 100.0f;
     [SerializeField] private int regenRate = 1;
+    [SerializeField] private int regenHurtRate = 1;
+    private float _currentPlayerHealth = 100.0f;
     private bool canRegen = false;
+    private bool canHurtRegen = false;
 
     [Header("Splatter Image")]
     [SerializeField] private Image blackSplatterImage = null;
 
     [Header("Hurt Image")]
     [SerializeField] private Image hurtImage = null;
-    [SerializeField] private float hurtTimer = 0.1f;
+    [SerializeField] private Image hurtBloodImage = null;
 
     [Header("Heal Timer")]
     [SerializeField] private float healCooldown = 3.0f;
@@ -26,27 +28,33 @@ public class HealthController : MonoBehaviour
     void UpdateHealth()
     {
         Color splatterAlpha = blackSplatterImage.color;
-        splatterAlpha.a = 1 - (currentPlayerHealth / maxPlayerHealth);
+        Color bloodAlpha = hurtBloodImage.color;
+        splatterAlpha.a = 1 - (_currentPlayerHealth / maxPlayerHealth);
+        bloodAlpha.a = 1 - (_currentPlayerHealth / maxPlayerHealth);
         blackSplatterImage.color = splatterAlpha;
+        hurtBloodImage.color = bloodAlpha;
     }
 
-    IEnumerator HurtFlash()
+    void HurtFlash(float damage)
     {
-        hurtImage.enabled = true;
-        yield return new WaitForSeconds(1);
-        hurtImage.enabled = false;
+        Color hurtSplatter = hurtImage.color;
+        hurtSplatter.a = damage * 100f / _currentPlayerHealth / 100;
+        hurtImage.color = hurtSplatter;
+        canHurtRegen = true;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
-        if (currentPlayerHealth >= 0)
+        if (_currentPlayerHealth - damage >= 0)
         {
-            canRegen = false;
-            StartCoroutine(HurtFlash());
+            HurtFlash(damage);
+            _currentPlayerHealth -= damage;
             UpdateHealth();
+            canRegen = false;
             healCooldown = maxHealCouldown;
             startCooldown = true;
-        }
+        } else
+            Debug.Log("Die");
     }
 
     private void Update()
@@ -59,19 +67,30 @@ public class HealthController : MonoBehaviour
                 canRegen = true;
                 startCooldown = false;
             }
-            if (canRegen)
+        }
+
+        if (canRegen)
+        {
+            if (_currentPlayerHealth <= maxPlayerHealth - 0.01)
             {
-                if (currentPlayerHealth <= maxPlayerHealth - 0.01)
-                {
-                    currentPlayerHealth += Time.deltaTime * regenRate;
-                    UpdateHealth();
-                } else
-                {
-                    currentPlayerHealth = maxPlayerHealth;
-                    healCooldown = maxHealCouldown;
-                    canRegen = false;
-                }
+                _currentPlayerHealth += Time.deltaTime * regenRate;
+                UpdateHealth();
+            } else
+            {
+                _currentPlayerHealth = maxPlayerHealth;
+                healCooldown = maxHealCouldown;
+                canRegen = false;
             }
+        }
+        if (canHurtRegen)
+        {
+            if (hurtImage.color.a > 0)
+            {
+                Color hurtSplatter = hurtImage.color;
+                hurtSplatter.a -= Time.deltaTime * regenHurtRate;
+                hurtImage.color = hurtSplatter;
+            } else
+                canHurtRegen = false;
         }
     }
 }

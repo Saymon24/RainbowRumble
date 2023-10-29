@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476d7e5b2a5b8634280d343c1c8e953e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombDamage: 10
+  bombDamage: 20
   _healthController: {fileID: 4331233398858472794}
 --- !u!65 &59513507
 BoxCollider:
@@ -237,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 59513505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.33, y: 0.294, z: 8.405}
+  m_LocalPosition: {x: -13.33, y: 0.294, z: 6.08}
   m_LocalScale: {x: 0.98549736, y: 0.026279273, z: 0.98549736}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476d7e5b2a5b8634280d343c1c8e953e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombDamage: 10
+  bombDamage: 90
   _healthController: {fileID: 4331233398858472794}
 --- !u!65 &414343152
 BoxCollider:
@@ -1071,7 +1071,7 @@ Transform:
   m_GameObject: {fileID: 414343150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.35, y: 0.294, z: 10.25}
+  m_LocalPosition: {x: -17.51, y: 0.294, z: 11}
   m_LocalScale: {x: 0.98549736, y: 0.026279273, z: 0.98549736}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7474791622562351539}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476d7e5b2a5b8634280d343c1c8e953e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombDamage: 10
+  bombDamage: 50
   _healthController: {fileID: 4331233398858472794}
 --- !u!65 &711048596
 BoxCollider:
@@ -1724,7 +1724,7 @@ Transform:
   m_GameObject: {fileID: 711048594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.85, y: 0.294, z: 7.598}
+  m_LocalPosition: {x: -16.85, y: 0.294, z: 5.37}
   m_LocalScale: {x: 0.98549736, y: 0.026279273, z: 0.98549736}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2332,6 +2332,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992517122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1016321517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 611976635208037489, guid: bdbf8b71e2f61c740b9887840431f1f3, type: 3}
+  m_PrefabInstance: {fileID: 7474791622562351539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130992325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,7 +2639,7 @@ Transform:
   m_GameObject: {fileID: 1141473285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.33, y: 0.283, z: 10.25}
+  m_LocalPosition: {x: -13.33, y: 0.316, z: 11.343}
   m_LocalScale: {x: 0.98549736, y: 0.026279273, z: 0.98549736}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4610,14 +4621,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0780a81f8716e664eb1b770ef7cd3f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlayerHealth: 100
   maxPlayerHealth: 100
-  regenRate: 1
+  regenRate: 10
+  regenHurtRate: 1
   blackSplatterImage: {fileID: 1893447148}
   hurtImage: {fileID: 506168551}
-  hurtTimer: 0.1
+  hurtBloodImage: {fileID: 1016321517}
   healCooldown: 3
-  maxHealCouldown: 3
+  maxHealCouldown: 1
   startCooldown: 0
 --- !u!1001 &7474791622562351539
 PrefabInstance:
@@ -4627,6 +4638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 366014598831489024, guid: bdbf8b71e2f61c740b9887840431f1f3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3089503928170590986, guid: bdbf8b71e2f61c740b9887840431f1f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0

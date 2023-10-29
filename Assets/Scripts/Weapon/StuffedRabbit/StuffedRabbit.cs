@@ -34,18 +34,16 @@ public class StuffedRabbit : MonoBehaviour
 
     private void Explode()
     {
+        float damageMultiplicator = GetComponent<WeaponDatasMultiplicator>().damageMultiplicator;
+
         Instantiate(explosionParticles, transform.position, Quaternion.identity);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, grenadeData.range);
 
         foreach(Collider nearbyObject in colliders)
         {
-            
             if (nearbyObject.TryGetComponent<Enemy>(out var enemy))
-            {
-                enemy.takeDamage(grenadeData.damage);
-            }
-
+                enemy.takeDamage(grenadeData.damage * damageMultiplicator);
         }
 
         Destroy(gameObject);

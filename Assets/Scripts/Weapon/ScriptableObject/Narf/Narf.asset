@@ -17,8 +17,13 @@ MonoBehaviour:
   range: 150
   bulletSpeed: 870
   impactForce: 10
-  currentAmmo: 30
+  currentAmmo: 14
   magSize: 30
   fireRate: 550
   reloadTime: 3
-  reloading: 1
+  reloading: 0
+  throwForce: 0
+  throwUpwardForce: 0
+  throwCooldown: 0
+  timeBeforeExplosion: 0
+  expodeOnImpact: 0

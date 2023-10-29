@@ -6,13 +6,13 @@ public class Candy : MonoBehaviour
 {
     public void giveEffects()
     {
-        if (GameObject.Find("WeaponHolder").GetComponent<CandyEffects>())
+        if (GameObject.Find("Player").GetComponent<CandyEffects>())
         {
-            CandyEffects effect = GameObject.Find("WeaponHolder").GetComponent<CandyEffects>();
+            CandyEffects effect = GameObject.Find("Player").GetComponent<CandyEffects>();
 
             if (effect.getRarity() <= GetComponent<RarityPowerUp>().getRarity())
             {
-                CandyEffects newEffect = GameObject.Find("WeaponHolder").AddComponent<CandyEffects>();
+                CandyEffects newEffect = GameObject.Find("Player").AddComponent<CandyEffects>();
                 newEffect.setNewRarity(GetComponent<RarityPowerUp>().getRarity());
 
                 // Destroy old instance
@@ -25,7 +25,7 @@ public class Candy : MonoBehaviour
         }
         else
         {
-            CandyEffects effect = GameObject.Find("WeaponHolder").AddComponent<CandyEffects>();
+            CandyEffects effect = GameObject.Find("Player").AddComponent<CandyEffects>();
             effect.setNewRarity(GetComponent<RarityPowerUp>().getRarity());
         }
     }

@@ -16,7 +16,7 @@ public class WeaponHolder : MonoBehaviour
 
         foreach (Transform weapon in transform)
         {
-            print(weapon.gameObject.name);
+            //print(weapon.gameObject.name);
             weapons.Add(weapon.gameObject);
         }
         SelectWeapon();
@@ -31,6 +31,11 @@ public class WeaponHolder : MonoBehaviour
                 return;
             previousSelectedWeapon = selectedWeapon;
             selectedWeapon = !selectedWeapon;
+            if (!GameObject.Find("Player").GetComponent<CandyEffects>())
+            {
+                weapons[0].GetComponent<WeaponDatasMultiplicator>().damageMultiplicator = 1f;
+                weapons[1].GetComponent<WeaponDatasMultiplicator>().damageMultiplicator = 1f;
+            }
         }
 
         if (previousSelectedWeapon != selectedWeapon)

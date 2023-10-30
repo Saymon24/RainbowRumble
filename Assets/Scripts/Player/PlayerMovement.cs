@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     [Header("Character Movement")]
     [SerializeField] float speed = 5f;
+    public float speedMultiplicator = 1f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float jumpHeight = 3f;
     [SerializeField] CharacterController controller;
@@ -16,7 +18,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
 
-    public float speedMultiplicator = 1f;
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference movement;
+    [SerializeField] private InputActionReference jump;
 
     Vector3 velocity;
     bool isGrounded;
@@ -31,14 +35,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = movement.action.ReadValue<Vector2>().x;
+        float z = movement.action.ReadValue<Vector2>().y;
 
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(speed * speedMultiplicator * Time.deltaTime * move);
 
-        if (Input.GetButton("Jump") && isGrounded)
+        if (jump.action.IsPressed() && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

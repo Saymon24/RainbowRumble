@@ -5103,6 +5103,8 @@ MonoBehaviour:
   rayfireGun: {fileID: 528298854132347474}
   rayFireGunTarget: {fileID: 7174365993652400005}
   fpsCam: {fileID: 0}
+  shoot: {fileID: 5323581227869026113, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  reload: {fileID: -3600183446729517084, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!114 &528298854132347474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5182,7 +5184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a279653a9a9ba544ab0bcc0d7e885098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMulitplicator: 1
+  damageMultiplicator: 1
 --- !u!1001 &4825799632718920974
 PrefabInstance:
   m_ObjectHideFlags: 0

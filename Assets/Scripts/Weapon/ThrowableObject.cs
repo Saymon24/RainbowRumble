@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ThrowableObject : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class ThrowableObject : MonoBehaviour
     private float timerToRefill = 0f;
     private bool refilling = false;
 
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference throwObject;
+
     private void Start()
     {
         readyToThrow = true;
@@ -23,7 +27,7 @@ public class ThrowableObject : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Throw") && readyToThrow && gunData.currentAmmo > 0)
+        if (throwObject.action.WasPerformedThisFrame() && readyToThrow && gunData.currentAmmo > 0)
         {
             Throw();
         }

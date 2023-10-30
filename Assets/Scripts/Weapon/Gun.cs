@@ -2,6 +2,7 @@ using RayFire;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Gun : MonoBehaviour
     [SerializeField] Camera fpsCam;
 
     private float timeSinceLastShoot = 0f;
+
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference shoot;
+    [SerializeField] private InputActionReference reload;
 
     private void Start()
     {
@@ -49,7 +54,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (shoot.action.IsPressed())
         {
             if (gunData.currentAmmo > 0)
             {
@@ -63,7 +68,7 @@ public class Gun : MonoBehaviour
             timeSinceLastShoot += Time.deltaTime;
         }
 
-        if (Input.GetButton("Reload"))
+        if (reload.action.IsPressed())
         {
             StartReload();
         }

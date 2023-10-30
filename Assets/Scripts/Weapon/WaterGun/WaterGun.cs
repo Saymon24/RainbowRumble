@@ -2,6 +2,7 @@ using RayFire;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WaterGun : MonoBehaviour
 {
@@ -19,15 +20,16 @@ public class WaterGun : MonoBehaviour
     private GameObject createdBeam;
     private ParticleSystem particleBeam;
 
-
     [SerializeField] float gravityMax = 5f;
     float newGravity = 0f;
 
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference shoot;
+    [SerializeField] private InputActionReference reload;
 
     private void Awake()
     {
         createdBeam = Instantiate(beam);
-        createdBeam.transform.parent = transform;
         createdBeam.GetComponentInChildren<WaterGunParticles>().InitGunData(gunData);
 
         particleBeam = createdBeam.GetComponentInChildren<ParticleSystem>();
@@ -97,7 +99,7 @@ public class WaterGun : MonoBehaviour
     {
         particleBeam.GetComponent<WaterGunParticles>().UpdateDamageMultiplicator(GetComponent<WeaponDatasMultiplicator>().damageMultiplicator);
 
-        if (Input.GetButton("Fire1"))
+        if (shoot.action.IsPressed())
         {
             if (gunData.currentAmmo > 0)
             {
@@ -109,16 +111,22 @@ public class WaterGun : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Fire1") || gunData.currentAmmo < 0f)
+        if (!shoot.action.IsPressed() || gunData.currentAmmo < 0f)
         {
             DeActivate();
         }
 
-        if (Input.GetButton("Reload"))
+        if (reload.action.IsPressed())
         {
             StartReload();
         }
 
+    }
+
+    private void OnDisable()
+    {
+        if (particleBeam)
+            particleBeam.Stop();
     }
 
     private void LateUpdate()

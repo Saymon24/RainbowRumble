@@ -119,6 +119,8 @@ MonoBehaviour:
   beam: {fileID: 4727589616567196429, guid: c83e1880cda87474b85135fe18efac63, type: 3}
   fpsCam: {fileID: 0}
   gravityMax: 0.2
+  shoot: {fileID: 5323581227869026113, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  reload: {fileID: -3600183446729517084, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!114 &1048160364806937360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a279653a9a9ba544ab0bcc0d7e885098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMulitplicator: 1
+  damageMultiplicator: 1
 --- !u!1001 &9152934711036758865
 PrefabInstance:
   m_ObjectHideFlags: 0

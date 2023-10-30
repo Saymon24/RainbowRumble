@@ -1,13 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponHolder : MonoBehaviour
 {
 
     private List<GameObject> weapons;
     private bool selectedWeapon = false;
-    private bool previousSelectedWeapon = true; 
+    private bool previousSelectedWeapon = true;
+
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference changeWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,7 @@ public class WeaponHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Switch"))
+        if (changeWeapon.action.WasPerformedThisFrame())
         {
             if (weapons.Count != 2)
                 return;

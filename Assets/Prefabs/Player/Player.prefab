@@ -374,8 +374,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92a34959cefbf544bf8f2f11f6868e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 400
+  mouseSensitivity: 50
   playerBody: {fileID: 165711248712964620}
+  Xaxis: {fileID: -5462682304731047163, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  Yaxis: {fileID: -6492635315322136572, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!1 &3600312848568856882
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +414,7 @@ Transform:
   - {fileID: 4667679203502510166}
   - {fileID: 617695027860894138}
   - {fileID: 5795430516377367880}
+  - {fileID: 3806817493267778554}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3794626189260140268
@@ -453,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  speedMultiplicator: 1
   gravity: -19.62
   jumpHeight: 3
   controller: {fileID: 3794626189260140268}
@@ -461,7 +465,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  speedMultiplicator: 1
+  movement: {fileID: -6904435729589443372, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  jump: {fileID: -928176022186444002, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!114 &5975230523468706592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +537,7 @@ MonoBehaviour:
   attackPoint: {fileID: 5795430516377367880}
   objectToThrow: {fileID: 0}
   gunData: {fileID: 0}
+  throwObject: {fileID: -1229604704876390053, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!1 &5574758990778439683
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0fdbf0d71c3bb4ca4ea565675c7f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  sensitivityMultiplier: 4
+  speed: 2
+  sensitivityMultiplier: 1
+  Xaxis: {fileID: -5462682304731047163, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  Yaxis: {fileID: -6492635315322136572, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
 --- !u!114 &8012916876685241496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +696,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bb92d024946414099041294bace0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeWeapon: {fileID: 3161091187294937445, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+--- !u!1 &8027149355817163193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3806817493267778554}
+  - component: {fileID: 4569261133465746854}
+  m_Layer: 31
+  m_Name: Inputs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3806817493267778554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027149355817163193}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 165711248712964620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4569261133465746854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027149355817163193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 1b7af19996dd8344483da5f90e53f8f0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2160112265037445252
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MouseLook : MonoBehaviour
 {
 
     [SerializeField] float mouseSensitivity = 100f;
     [SerializeField] Transform playerBody;
+
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference Xaxis;
+    [SerializeField] private InputActionReference Yaxis;
 
     float xRotation = 0f;
 
@@ -19,8 +24,8 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Xaxis.action.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
+        float mouseY = Yaxis.action.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

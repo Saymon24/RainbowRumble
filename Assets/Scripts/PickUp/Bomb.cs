@@ -12,6 +12,9 @@ public class Bomb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _healthController.TakeDamage(bombDamage);
+            AudioManager.instance.PlayVoice("BombExploded");
+            AudioManager.instance.PlaySFX("Bomb");
+            AudioManager.instance.PlayMusic("War");
         }
     }
 }

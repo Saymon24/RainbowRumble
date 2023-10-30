@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
     public void AttackPlayer()
     {
-        player.GetComponent<PlayerManager>().takeDamage(damage);
+        player.GetComponent<HealthController>().TakeDamage(damage);
     }
 
     private int GetRarityPowerUp(int powerUpIndex)

@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 165711248712964620}
   - component: {fileID: 3794626189260140268}
   - component: {fileID: 8455954233210794959}
-  - component: {fileID: 2725170759674209330}
+  - component: {fileID: 5975230523468706592}
   m_Layer: 31
   m_Name: Player
   m_TagString: Player
@@ -461,7 +461,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &2725170759674209330
+  speedMultiplicator: 1
+--- !u!114 &5975230523468706592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,9 +471,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3600312848568856882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 493008a88a80cf64d96f2ef105aba59e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0780a81f8716e664eb1b770ef7cd3f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayerHealth: 100
+  _currentPlayerHealth: 100
+  regenRate: 10
+  regenHurtRate: 1
+  blackSplatterImage: {fileID: 0}
+  hurtImage: {fileID: 0}
+  hurtBloodImage: {fileID: 0}
+  healCooldown: 3
+  maxHealCouldown: 1
+  startCooldown: 0
 --- !u!1 &4811627591589423877
 GameObject:
   m_ObjectHideFlags: 0

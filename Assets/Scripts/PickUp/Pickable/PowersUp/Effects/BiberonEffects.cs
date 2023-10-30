@@ -9,10 +9,10 @@ public class BiberonEffects : MonoBehaviour
 
     public void applyEffect()
     {
-        if (GetComponent<PlayerManager>().health * effectMultiplicator[rarity] > GetComponent<PlayerManager>().maxHealth)
-            GetComponent<PlayerManager>().health = GetComponent<PlayerManager>().maxHealth;
+        if (GetComponent<HealthController>()._currentPlayerHealth * effectMultiplicator[rarity] > GetComponent<HealthController>().maxPlayerHealth)
+            GetComponent<HealthController>()._currentPlayerHealth = GetComponent<HealthController>().maxPlayerHealth;
         else
-            GetComponent<PlayerManager>().health = GetComponent<PlayerManager>().health * effectMultiplicator[rarity];
+            GetComponent<HealthController>()._currentPlayerHealth = GetComponent<HealthController>()._currentPlayerHealth * effectMultiplicator[rarity];
         Destroy(this.GetComponent<BiberonEffects>());
     }
 

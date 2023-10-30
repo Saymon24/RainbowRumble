@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     [Header("Player Health Amount")]
-    [SerializeField] private float maxPlayerHealth = 100.0f;
+    [SerializeField] public float maxPlayerHealth = 100.0f;
+    public float _currentPlayerHealth = 100.0f;
     [SerializeField] private int regenRate = 1;
     [SerializeField] private int regenHurtRate = 1;
-    private float _currentPlayerHealth = 100.0f;
     private bool canRegen = false;
     private bool canHurtRegen = false;
 
@@ -43,6 +43,12 @@ public class HealthController : MonoBehaviour
         canHurtRegen = true;
     }
 
+    private void Die()
+    {
+        GameObject.Find("PlayerCamera").GetComponent<MouseLook>().enabled = false;
+        GetComponent<PlayerMovement>().enabled = false;
+    }
+
     public void TakeDamage(float damage)
     {
         if (_currentPlayerHealth - damage >= 0)
@@ -53,8 +59,9 @@ public class HealthController : MonoBehaviour
             canRegen = false;
             healCooldown = maxHealCouldown;
             startCooldown = true;
-        } else
-            Debug.Log("Die");
+        }
+        else
+            Die();
     }
 
     private void Update()

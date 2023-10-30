@@ -4516,6 +4516,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 5975230523468706592, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+      propertyPath: hurtImage
+      value: 
+      objectReference: {fileID: 506168551}
+    - target: {fileID: 5975230523468706592, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+      propertyPath: hurtBloodImage
+      value: 
+      objectReference: {fileID: 1016321517}
+    - target: {fileID: 5975230523468706592, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+      propertyPath: blackSplatterImage
+      value: 
+      objectReference: {fileID: 1893447148}
     - target: {fileID: 6067802683368192541, guid: 75df2898accd84c4cb25555054589afe, type: 3}
       propertyPath: m_Layer
       value: 29
@@ -4599,37 +4611,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3600312848568856882, guid: 75df2898accd84c4cb25555054589afe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4331233398858472794}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df2898accd84c4cb25555054589afe, type: 3}
---- !u!1 &4331233398858472793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3600312848568856882, guid: 75df2898accd84c4cb25555054589afe, type: 3}
+--- !u!114 &4331233398858472794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5975230523468706592, guid: 75df2898accd84c4cb25555054589afe, type: 3}
   m_PrefabInstance: {fileID: 4331233398858472792}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4331233398858472794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331233398858472793}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0780a81f8716e664eb1b770ef7cd3f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerHealth: 100
-  regenRate: 10
-  regenHurtRate: 1
-  blackSplatterImage: {fileID: 1893447148}
-  hurtImage: {fileID: 506168551}
-  hurtBloodImage: {fileID: 1016321517}
-  healCooldown: 3
-  maxHealCouldown: 1
-  startCooldown: 0
 --- !u!1001 &7474791622562351539
 PrefabInstance:
   m_ObjectHideFlags: 0

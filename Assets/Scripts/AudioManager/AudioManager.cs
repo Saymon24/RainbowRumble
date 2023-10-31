@@ -111,9 +111,27 @@ public class AudioManager : MonoBehaviour
         _audioMixer.SetFloat("Master", volume);
     }
 
+    public float GetMasterVolume()
+    {
+        float volume;
+        if (_audioMixer.GetFloat("Master", out volume))
+            return volume;
+        else
+            return 0;
+    }
+
     public void MusicVolume(float volume)
     {
         _audioMixer.SetFloat("Music", volume);
+    }
+
+    public float GetMusicVolume()
+    {
+        float volume;
+        if (_audioMixer.GetFloat("Music", out volume))
+            return volume;
+        else
+            return 0;
     }
 
     public void SfxVolume(float volume)
@@ -121,8 +139,26 @@ public class AudioManager : MonoBehaviour
         _audioMixer.SetFloat("SFX", volume);
     }
 
+    public float GetSfxVolume()
+    {
+        float volume;
+        if (_audioMixer.GetFloat("SFX", out volume))
+            return volume;
+        else
+            return 0;
+    }
+
     public void VoiceVolume(float volume)
     {
         _audioMixer.SetFloat("Voice", volume);
+    }
+
+    public float GetVoiceVolume()
+    {
+        float volume;
+        if (_audioMixer.GetFloat("Voice", out volume))
+            return volume;
+        else
+            return 0;
     }
 }

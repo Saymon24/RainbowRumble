@@ -33,6 +33,12 @@ public class WaterGun : MonoBehaviour
         createdBeam.GetComponentInChildren<WaterGunParticles>().InitGunData(gunData);
 
         particleBeam = createdBeam.GetComponentInChildren<ParticleSystem>();
+
+        if (fpsCam == null)
+        {
+            fpsCam = GameObject.Find("FPSCamera").GetComponent<Camera>();
+        }
+
     }
 
     private void Activate()
@@ -155,7 +161,10 @@ public class WaterGun : MonoBehaviour
         return gunData;
     }
 
-
+    public void DestroyBeam()
+    {
+        Destroy(beam);
+    }
 
 
 

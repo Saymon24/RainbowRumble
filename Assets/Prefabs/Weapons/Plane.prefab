@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 2803204503627635981}
   - component: {fileID: 5688030013266613737}
   - component: {fileID: 7875595503341718276}
+  - component: {fileID: 4395295971150419635}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -245,6 +246,19 @@ CapsuleCollider:
   m_Height: 0.6007091
   m_Direction: 1
   m_Center: {x: 0.13347304, y: 0.13299456, z: -0.13}
+--- !u!114 &4395295971150419635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986491873154750977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee0621c6572f6c459354f323eb8e48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: b1ab4fbf571d5f24c9b7184feb23ce0b, type: 2}
 --- !u!1 &1698387025374783045
 GameObject:
   m_ObjectHideFlags: 0

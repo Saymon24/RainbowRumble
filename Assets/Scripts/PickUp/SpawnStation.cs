@@ -94,8 +94,16 @@ public class SpawnStation : MonoBehaviour
 
         if (hasSpawn)
         {
+            if (timer >= 30f)
+            {
+                Destroy(currentInstance);
+                Destroy(gameObject);
+            }
+
             rarityPart.material = lootColorPart;
             rarityPart.trailMaterial = lootColorTrail;
+            timer += Time.deltaTime;
+            return;
         }
 
         if (ChangedWeapon)
@@ -156,7 +164,8 @@ public class SpawnStation : MonoBehaviour
                 player.GetComponentInChildren<WeaponHolder>().AddWeapon(w, currentData);
 
             }
-
+            Destroy(gameObject);
+            Destroy(currentInstance);
         }
 
     }

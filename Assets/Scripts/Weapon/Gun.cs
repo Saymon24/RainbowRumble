@@ -28,6 +28,12 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         gunData.reloading = false;
+
+        if (fpsCam == null)
+        {
+            fpsCam = GameObject.Find("FPSCamera").GetComponent<Camera>();
+        }
+
     }
 
     public void StartReload()

@@ -9,7 +9,7 @@ public class SoundPanelController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (false)
         {
             transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
             Time.timeScale = transform.GetChild(0).gameObject.activeSelf ? 0 : 1;

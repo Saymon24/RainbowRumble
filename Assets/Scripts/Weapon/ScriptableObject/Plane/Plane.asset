@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Plane
   m_EditorClassIdentifier: 
   name: Plane
+  type: 1
   damage: 100
   range: 5
   bulletSpeed: 5

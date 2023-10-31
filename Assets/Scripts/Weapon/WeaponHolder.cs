@@ -20,7 +20,6 @@ public class WeaponHolder : MonoBehaviour
 
         foreach (Transform weapon in transform)
         {
-            //print(weapon.gameObject.name);
             weapons.Add(weapon.gameObject);
         }
         SelectWeapon();
@@ -76,6 +75,67 @@ public class WeaponHolder : MonoBehaviour
     public GunData GetWeaponData()
     {
         return weapons[Convert.ToInt32(selectedWeapon)].GetComponent<GetGunData>().GetData();
+    }
+
+    public GunData GetWeaponDataFromIndex(int index)
+    {
+        if (index > weapons.Count - 1)
+        {
+            return null;
+        }
+
+        return weapons[index].GetComponent<GetGunData>().GetData();
+    }
+
+    public void AddWeapon(GameObject weapon, GunData wData)
+    {
+        bool alreadyOwn = false;
+
+        int index = 0;
+        foreach (GameObject w in weapons)
+        {
+
+            GunData tmp = GetWeaponDataFromIndex(index);
+
+            if (tmp.name == wData.name)
+            {
+                GetWeaponData().currentAmmo = GetWeaponData().magSize;
+                alreadyOwn = true;
+            }
+            index++;
+        }
+
+        if (alreadyOwn)
+            return;
+
+        if (weapons.Count != 1)
+        {
+            GameObject currentW = GetSelectedWeapon();
+            int currentIndex = Convert.ToInt32(selectedWeapon);
+
+            weapons.Remove(currentW);
+
+            if (currentW.GetComponent<GetGunData>().GetData().name == "WaterGun")
+            {
+                currentW.GetComponent<WaterGun>().DestroyBeam();
+            }
+
+            Destroy(currentW);
+        }
+
+        GameObject socket = GameObject.Find("WeaponSocket");
+        GameObject newWeapon = Instantiate(weapon, socket.transform.position, socket.transform.rotation);
+        weapons.Add(newWeapon);
+        newWeapon.transform.parent = this.transform;
+
+        Transform[] allChildren = GetComponentsInChildren<Transform>();
+
+        // Parcourez tous les objets et changez leur layer.
+        foreach (Transform child in allChildren)
+        {
+            child.gameObject.layer = LayerMask.NameToLayer("FPSLayer");
+        }
+        newWeapon.layer = LayerMask.NameToLayer("FPSLayer");
     }
 
 }

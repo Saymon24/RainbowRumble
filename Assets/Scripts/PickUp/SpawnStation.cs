@@ -1,12 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class SpawnStation : MonoBehaviour
 {
-
-    [SerializeField] private GameObject[] weaponsToSpawn;
     [SerializeField] private Transform weaponSpawnPoint;
     [SerializeField] private bool ChangedWeapon = false;
     [SerializeField] private float timerToChanged = 2f;
@@ -21,16 +17,33 @@ public class SpawnStation : MonoBehaviour
     [SerializeField] private List<Material> rarityMaterial;
     [SerializeField] private bool randomColor;
 
+    [Header("For loot only")]
+    [SerializeField] private Material lootColorPart;
+    [SerializeField] private Material lootColorTrail;
+
+    [Header("Dictionnary of weapon")]
+    [SerializeField] private List<GameObject> standWeapon;
+    [SerializeField] private List<GameObject> usableWeapon;
+
+
+    public bool debug = false;
+
     private float timer;
     private GameObject currentInstance;
     private Vector3 initialPosition;
     private ParticleSystemRenderer rarityPart;
     private Dictionary<int, Material> colorPair;
+    private Dictionary<GameObject, GameObject> weaponDict;
+
+    private bool hasSpawn = false;
 
     private int index;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (debug)
+            hasSpawn = true;
 
         colorPair = new Dictionary<int, Material>();
 
@@ -42,7 +55,7 @@ public class SpawnStation : MonoBehaviour
             i++;
         }
 
-       index = Random.Range(0, weaponsToSpawn.Length);
+       index = Random.Range(0, standWeapon.Count);
 
         if (ChangedWeapon)
         {
@@ -54,17 +67,44 @@ public class SpawnStation : MonoBehaviour
             ChangedWeapon = false;
         }
 
-        currentInstance = Instantiate(weaponsToSpawn[index], weaponSpawnPoint.position, Quaternion.identity);
+        currentInstance = Instantiate(standWeapon[index], weaponSpawnPoint.position, Quaternion.identity);
         initialPosition = currentInstance.transform.position;
 
         rarityPart = GetComponentInChildren<ParticleSystem>().GetComponent<ParticleSystemRenderer>();
         rarityPart.material = colorPair[(int)rarityColor];
         rarityPart.trailMaterial = colorPair[(int)rarityColor];
 
+
+        if (standWeapon.Count != usableWeapon.Count)
+        {
+            Debug.Log("ERROR STAND WEAPON != USABLE WEAPON");
+        }
+
+        weaponDict = new Dictionary<GameObject, GameObject>();
+
+        for (int k = 0; k != standWeapon.Count; k++)
+        {
+            weaponDict.Add(standWeapon[k], usableWeapon[k]);
+        }
+
     }
 
     private void Update()
     {
+
+        if (hasSpawn)
+        {
+            if (timer >= 30f)
+            {
+                Destroy(currentInstance);
+                Destroy(gameObject);
+            }
+
+            rarityPart.material = lootColorPart;
+            rarityPart.trailMaterial = lootColorTrail;
+            timer += Time.deltaTime;
+            return;
+        }
 
         if (ChangedWeapon)
         {
@@ -73,10 +113,10 @@ public class SpawnStation : MonoBehaviour
                 index++;
                 Destroy(currentInstance);
 
-                if (index >= weaponsToSpawn.Length)
+                if (index >= standWeapon.Count)
                     index = 0;
 
-                currentInstance = Instantiate(weaponsToSpawn[index], weaponSpawnPoint.position, Quaternion.identity);
+                currentInstance = Instantiate(standWeapon[index], weaponSpawnPoint.position, Quaternion.identity);
 
                 if (randomColor)
                 {
@@ -106,7 +146,33 @@ public class SpawnStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Trigger Station with: " + weaponsToSpawn[index].name);
+
+        if (other.CompareTag("Player"))
+        {
+
+            GunData currentData = currentInstance.GetComponent<GetGunData>().GetData();
+
+            if (currentData.type == WeaponType.Throwable)
+            {
+                return;
+            }
+            else
+            {
+                GameObject w = weaponDict[standWeapon[index]];
+                GameObject player = other.gameObject;
+
+                player.GetComponentInChildren<WeaponHolder>().AddWeapon(w, currentData);
+
+            }
+            Destroy(gameObject);
+            Destroy(currentInstance);
+        }
+
+    }
+
+    public void hasBeenSpawn()
+    {
+        hasSpawn = true;
     }
 
 }

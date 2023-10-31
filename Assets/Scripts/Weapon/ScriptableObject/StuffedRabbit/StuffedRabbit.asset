@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StuffedRabbit
   m_EditorClassIdentifier: 
   name: Stuffedrabbit
+  type: 1
   damage: 3000
   range: 5
   bulletSpeed: 5

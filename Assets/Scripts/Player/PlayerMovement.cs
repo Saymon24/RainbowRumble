@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [Header("Character Movement")]
-    [SerializeField] float speed = 5f;
+    public float speed = 5f;
     public float speedMultiplicator = 1f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float jumpHeight = 3f;

@@ -11,6 +11,14 @@ public class Score : MonoBehaviour
 
     private int _score = 0;
 
+    public void Update()
+    {
+        if (FindAnyObjectByType<CombatManager>().isInCombat)
+            transform.GetChild(0).gameObject.SetActive(true);
+        else
+            transform.GetChild(0).gameObject.SetActive(false);
+    }
+
     public void addScore(int score)
     {
         _score += score;

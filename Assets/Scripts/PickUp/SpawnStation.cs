@@ -138,7 +138,6 @@ public class SpawnStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Trigger Station with: " + standWeapon[index].name);
 
         if (other.CompareTag("Player"))
         {

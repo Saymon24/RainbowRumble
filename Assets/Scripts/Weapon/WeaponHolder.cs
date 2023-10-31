@@ -113,9 +113,7 @@ public class WeaponHolder : MonoBehaviour
             GameObject currentW = GetSelectedWeapon();
             int currentIndex = Convert.ToInt32(selectedWeapon);
 
-            Debug.Log("Removing: " + currentW.name + " from list of equipped weapons");
             weapons.Remove(currentW);
-            Debug.Log("Trying to destroy removed weapons");
 
             if (currentW.GetComponent<GetGunData>().GetData().name == "WaterGun")
             {
@@ -123,7 +121,6 @@ public class WeaponHolder : MonoBehaviour
             }
 
             Destroy(currentW);
-            Debug.Log("Weapon destroyed correctly");
         }
 
         GameObject socket = GameObject.Find("WeaponSocket");

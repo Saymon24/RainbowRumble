@@ -4869,9 +4869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6421418630203293865}
-  - component: {fileID: 4082432771413239950}
-  - component: {fileID: 5876145048987155463}
-  - component: {fileID: 2257227811420583737}
+  - component: {fileID: 2657669860737942807}
   - component: {fileID: 2690815719089756824}
   m_Layer: 0
   m_Name: WeaponStation
@@ -4897,58 +4895,8 @@ Transform:
   - {fileID: 3417560227005771698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4082432771413239950
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7935272308686549527}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5876145048987155463
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7935272308686549527}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 749a1382091dfba4aa89d2decb6d6e36, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2257227811420583737
-SphereCollider:
+--- !u!136 &2657669860737942807
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4965,9 +4913,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.506673
+  m_Height: 20807.166
+  m_Direction: 1
+  m_Center: {x: 0, y: 5403.615, z: 0.0066729784}
 --- !u!114 &2690815719089756824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4980,11 +4930,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad7b16d47eccc54a9a7b5e1cb97a29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsToSpawn: []
+  weaponsToSpawn:
+  - {fileID: 7372599499568757122, guid: b6803a549d13aa64eb91bb1a392ddc12, type: 3}
+  - {fileID: 7620461818696117685, guid: 18df8fd53dd825a4fb22549480eef385, type: 3}
+  - {fileID: 7598461409479299706, guid: 983e9dfe34262a249a863fd51bfa79d5, type: 3}
   weaponSpawnPoint: {fileID: 2391745189309995404}
   ChangedWeapon: 0
   timerToChanged: 2
-  RotateWeapon: 0
+  RotateWeapon: 1
   rotateSpeed: 180
   rarityColor: 0
   rarityMaterial:
@@ -4996,3 +4949,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 756efb355ae3c8d4081bcc196b03b3ca, type: 2}
   - {fileID: 2100000, guid: cd46ed959b4024b4798564c434b785ac, type: 2}
   randomColor: 0
+  lootColorPart: {fileID: 2100000, guid: cd46ed959b4024b4798564c434b785ac, type: 2}
+  lootColorTrail: {fileID: 2100000, guid: 19bfc7b66b6fe1248a6c5cf25fdf51e9, type: 2}
+  standWeapon:
+  - {fileID: 7372599499568757122, guid: b6803a549d13aa64eb91bb1a392ddc12, type: 3}
+  - {fileID: 7620461818696117685, guid: 18df8fd53dd825a4fb22549480eef385, type: 3}
+  usableWeapon:
+  - {fileID: 8524265051015810229, guid: 4ba634ee43ad3a2498ad5cc302046f0a, type: 3}
+  - {fileID: 3743037724414003864, guid: 0d61f98cd0cf4234a898ee1061a87a13, type: 3}
+  debug: 0

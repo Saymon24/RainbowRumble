@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class MouseLook : MonoBehaviour
 {
 
-    [SerializeField] float mouseSensitivity = 100f;
+    [SerializeField] public float mouseSensitivityX = 100f;
+    [SerializeField] public float mouseSensitivityY = 100f;
     [SerializeField] Transform playerBody;
 
     [Header("Inputs")]
@@ -24,8 +25,8 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Xaxis.action.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
-        float mouseY = Yaxis.action.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
+        float mouseX = Xaxis.action.ReadValue<float>() * mouseSensitivityX * Time.deltaTime;
+        float mouseY = Yaxis.action.ReadValue<float>() * mouseSensitivityY * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

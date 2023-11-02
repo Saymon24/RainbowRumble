@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] InputActionReference pauseMenu;
+    [SerializeField] private InputActionAsset inputAsset;
     [SerializeField] GameObject UI;
+    [SerializeField] GameObject[] SettingsTab;
 
     private bool isOpen = false;
 
@@ -51,6 +53,15 @@ public class PauseMenu : MonoBehaviour
         UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        foreach (GameObject o in SettingsTab)
+        {
+            if (o.name == "Global Settings")
+                o.SetActive(true);
+            else
+                o.SetActive(false);
+        }
+
         if (optionsManag)
             optionsManag.GetComponent<OptionsManager>().UpdateOptions();
     }

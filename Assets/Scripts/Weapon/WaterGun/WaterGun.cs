@@ -141,7 +141,8 @@ public class WaterGun : MonoBehaviour
 
         if (reload.action.IsPressed())
         {
-            StartReload();
+            if (gunData.currentAmmo < gunData.magSize)
+                StartReload();
         }
 
     }

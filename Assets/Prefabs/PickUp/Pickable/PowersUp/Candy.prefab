@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd2330e1b9b3534fa712d20179552ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnTime: 60
   pickupCallback:
     m_PersistentCalls:
       m_Calls:
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd2330e1b9b3534fa712d20179552ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnTime: 60
   pickupCallback:
     m_PersistentCalls:
       m_Calls: []

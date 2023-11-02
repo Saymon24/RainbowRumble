@@ -22,14 +22,13 @@ public class Gift : MonoBehaviour
 
     private Vector3 startingScale;
 
-
     private void Start()
     {
         crackling = GetComponentInChildren<ParticleSystem>();
         forceField = GetComponentInChildren<ParticleSystemForceField>();
         startingScale = crackling.transform.localScale;
 
-        UIInstance = GameObject.Find("openGift");
+        UIInstance = GameObject.Find("openGift").GetComponent<GiftUI>().GetReferenceToObj();
 
         if (UIInstance != null)
             UIInstance.SetActive(false);

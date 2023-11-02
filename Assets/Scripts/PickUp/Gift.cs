@@ -76,7 +76,7 @@ public class Gift : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (!other.CompareTag("PLayer"))
+        if (!other.CompareTag("Player"))
             return;
 
         canOpenGift = true;
@@ -87,7 +87,7 @@ public class Gift : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (!other.CompareTag("PLayer"))
+        if (!other.CompareTag("Player"))
             return;
 
         canOpenGift = false;

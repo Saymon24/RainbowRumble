@@ -150,16 +150,17 @@ public class SpawnStation : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
+            GameObject player = other.gameObject;
             GunData currentData = currentInstance.GetComponent<GetGunData>().GetData();
 
             if (currentData.type == WeaponType.Throwable)
             {
-                return;
+                GameObject w = weaponDict[standWeapon[index]];
+                player.GetComponentInChildren<ThrowableObject>().ChangeThrowableObject(w);
             }
             else
             {
                 GameObject w = weaponDict[standWeapon[index]];
-                GameObject player = other.gameObject;
 
                 player.GetComponentInChildren<WeaponHolder>().AddWeapon(w, currentData);
 

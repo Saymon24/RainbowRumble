@@ -4930,10 +4930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad7b16d47eccc54a9a7b5e1cb97a29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsToSpawn:
-  - {fileID: 7372599499568757122, guid: b6803a549d13aa64eb91bb1a392ddc12, type: 3}
-  - {fileID: 7620461818696117685, guid: 18df8fd53dd825a4fb22549480eef385, type: 3}
-  - {fileID: 7598461409479299706, guid: 983e9dfe34262a249a863fd51bfa79d5, type: 3}
   weaponSpawnPoint: {fileID: 2391745189309995404}
   ChangedWeapon: 0
   timerToChanged: 2
@@ -4954,7 +4950,11 @@ MonoBehaviour:
   standWeapon:
   - {fileID: 7372599499568757122, guid: b6803a549d13aa64eb91bb1a392ddc12, type: 3}
   - {fileID: 7620461818696117685, guid: 18df8fd53dd825a4fb22549480eef385, type: 3}
+  - {fileID: 5141137584871833170, guid: d94370b79706c4441aac2c6561d54f0e, type: 3}
+  - {fileID: 5063986763055430687, guid: cbe4ebb50dd3cf5448bb3595f0f279a1, type: 3}
   usableWeapon:
   - {fileID: 8524265051015810229, guid: 4ba634ee43ad3a2498ad5cc302046f0a, type: 3}
   - {fileID: 3743037724414003864, guid: 0d61f98cd0cf4234a898ee1061a87a13, type: 3}
+  - {fileID: 6870804542281422240, guid: 09867fee48b167343b0ddfd9d3e8b6ef, type: 3}
+  - {fileID: 986491873154750977, guid: 6e027c818fd345549bb2ff97b196dc77, type: 3}
   debug: 0

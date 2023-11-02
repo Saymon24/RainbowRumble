@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -86,6 +84,11 @@ public class ThrowableObject : MonoBehaviour
     public int GetCurrentNumberofThrowableAvailaible()
     {
         return (int)gunData.currentAmmo;
+    }
+
+    public void ChangeThrowableObject(GameObject newObj)
+    {
+        objectToThrow = newObj;
     }
 
 }

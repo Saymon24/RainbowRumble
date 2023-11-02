@@ -8,6 +8,7 @@ public class Plane : MonoBehaviour
     [SerializeField] private GameObject explosionParticles;
     private RayfireBomb rayfireBomb;
 
+    private float explosionCountDown = 0.05f;
     private bool hasExploded;
 
     // Start is called before the first frame update
@@ -24,10 +25,22 @@ public class Plane : MonoBehaviour
         {
             Explode();
             hasExploded = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
+    private void Update()
+    {
+        if (hasExploded)
+        {
+            explosionCountDown -= Time.deltaTime;
+
+            if (explosionCountDown < 0)
+                Destroy(gameObject);
+            else
+                rayfireBomb.Explode(0);
+        }
+    }
 
     private void Explode()
     {

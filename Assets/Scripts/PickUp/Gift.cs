@@ -75,6 +75,10 @@ public class Gift : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (!other.CompareTag("PLayer"))
+            return;
+
         canOpenGift = true;
         if (UIInstance != null)
             UIInstance.SetActive(true);
@@ -82,6 +86,10 @@ public class Gift : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
+        if (!other.CompareTag("PLayer"))
+            return;
+
         canOpenGift = false;
         if (UIInstance != null)
             UIInstance.SetActive(false);

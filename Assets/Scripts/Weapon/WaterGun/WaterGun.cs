@@ -27,6 +27,8 @@ public class WaterGun : MonoBehaviour
     [SerializeField] private InputActionReference shoot;
     [SerializeField] private InputActionReference reload;
 
+    private WaterGunParticles waterP;
+
     private void Awake()
     {
         createdBeam = Instantiate(beam);
@@ -41,10 +43,19 @@ public class WaterGun : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        waterP = particleBeam.GetComponent<WaterGunParticles>();
+    }
+
     private void Activate()
     {
         if (isActive)
             return;
+
+        if (gunData.currentAmmo <= 0)
+            return;
+
         createdBeam.transform.position = gunEnd.position;
         createdBeam.transform.LookAt(hitPosition);
         createdBeam.transform.SetPositionAndRotation((gunEnd.position + hitPosition) / 2, Quaternion.LookRotation(hitPosition - gunEnd.position));
@@ -103,7 +114,7 @@ public class WaterGun : MonoBehaviour
 
     void Update()
     {
-        particleBeam.GetComponent<WaterGunParticles>().UpdateDamageMultiplicator(GetComponent<WeaponDatasMultiplicator>().damageMultiplicator);
+        waterP.UpdateDamageMultiplicator(GetComponent<WeaponDatasMultiplicator>().damageMultiplicator);
 
         if (shoot.action.IsPressed())
         {
@@ -111,13 +122,19 @@ public class WaterGun : MonoBehaviour
             {
                 if (CanShoot())
                 {
+
+                    if (!particleBeam.isPlaying)
+                    {
+                        particleBeam.Play();
+                    }
+
                     PercentageMagasin();
                     Shoot();
                 }
             }
         }
 
-        if (!shoot.action.IsPressed() || gunData.currentAmmo < 0f)
+        if (!shoot.action.IsPressed() || gunData.currentAmmo <= 0f)
         {
             DeActivate();
         }

@@ -5,15 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-    public void LoadScene(int SceneId)
+    private bool isLoading = false;
+    [SerializeField] private float waitDuration = 0.5f;
+    private float startTime = 0.0f;
+
+    void Start()
     {
-        StartCoroutine(LoadSceneAsync(SceneId));
+        startTime = Time.time;
     }
 
-    IEnumerator LoadSceneAsync(int sceneId)
+    public void LoadScene(string sceneName)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
 
+    public void Update()
+    {
+        float elapsedTime = Time.time - startTime;
+
+        if (elapsedTime > waitDuration && !isLoading)
+        {
+            isLoading = true;
+            Debug.Log(LoadingManager.instance.getNextSceneToLoad());
+            GetComponent<LoadingScene>().LoadScene(LoadingManager.instance.getNextSceneToLoad());
+        }
+    }
+
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         while (!operation.isDone)
         {

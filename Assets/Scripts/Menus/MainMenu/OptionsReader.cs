@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OptionsReader : MonoBehaviour
 {
+    [SerializeField] InputActionAsset inputAsset;
+
     void Start()
     {
         LoadAudio();
+        LoadKeysBinds();
+    }
+
+    private void LoadKeysBinds()
+    {
+        if (!PlayerPrefs.HasKey("rebinds"))
+            return;
+        string rebindSave = PlayerPrefs.GetString("rebinds");
+
+        inputAsset.LoadBindingOverridesFromJson(rebindSave, true);
     }
 
     private void LoadAudio()
@@ -15,8 +28,6 @@ public class OptionsReader : MonoBehaviour
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         float sfxVolume = PlayerPrefs.GetFloat("SfxVolume", 1f);
         float voiceVolume = PlayerPrefs.GetFloat("VoiceVolume", 1f);
-
-        Debug.Log("Player Pref Master: " + PlayerPrefs.GetFloat("MasterVolume"));
 
         AudioManager.instance.MasterVolume((1 - masterVolume) * -50);
         AudioManager.instance.MusicVolume((1 - musicVolume) * -50);

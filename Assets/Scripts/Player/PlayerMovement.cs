@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     [Header("Inputs")]
-    [SerializeField] private InputActionReference movement;
+    [SerializeField] private InputActionReference forward;
+    [SerializeField] private InputActionReference backward;
+    [SerializeField] private InputActionReference right;
+    [SerializeField] private InputActionReference left;
     [SerializeField] private InputActionReference jump;
 
     Vector3 velocity;
@@ -35,8 +38,17 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        float x = movement.action.ReadValue<Vector2>().x;
-        float z = movement.action.ReadValue<Vector2>().y;
+        float x = 0;
+        float z = 0;
+
+        if (forward.action.IsPressed())
+            z += 1;
+        if (backward.action.IsPressed())
+            z -= 1;
+        if (right.action.IsPressed())
+            x += 1;
+        if (left.action.IsPressed())
+            x -= 1;
 
         Vector3 move = transform.right * x + transform.forward * z;
 

@@ -9,12 +9,12 @@ public class SoundPanelController : MonoBehaviour
 
     public void Update()
     {
-        if (false)
+/*        if (false)
         {
             transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
             Time.timeScale = transform.GetChild(0).gameObject.activeSelf ? 0 : 1;
             Cursor.lockState = transform.GetChild(0).gameObject.activeSelf ? CursorLockMode.Confined : CursorLockMode.Locked;
-        }
+        }*/
     }
 
     public void ToggleMaster()

@@ -3557,11 +3557,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923825400}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &925910642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3600312848568856882, guid: 75df2898accd84c4cb25555054589afe, type: 3}
-  m_PrefabInstance: {fileID: 4331233398858472792}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &953070662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,11 +4996,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!20 &1410581092 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3826269561757969051, guid: 75df2898accd84c4cb25555054589afe, type: 3}
-  m_PrefabInstance: {fileID: 4331233398858472792}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1411496056
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,36 +7530,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3600312848568856882, guid: 75df2898accd84c4cb25555054589afe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4331233398858472798}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df2898accd84c4cb25555054589afe, type: 3}
 --- !u!114 &4331233398858472794 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5975230523468706592, guid: 75df2898accd84c4cb25555054589afe, type: 3}
   m_PrefabInstance: {fileID: 4331233398858472792}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925910642}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0780a81f8716e664eb1b770ef7cd3f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4331233398858472798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925910642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a19f1c3ba6cfa409838509a31728bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInCombat: 0
-  _camera: {fileID: 1410581092}
 --- !u!1001 &7474791622562351539
 PrefabInstance:
   m_ObjectHideFlags: 0

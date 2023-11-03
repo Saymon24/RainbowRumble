@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 508671fc6719e6f4bb7b6c5c41703bde
+guid: f57d2f3ea587b8d438220eb40acef199
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basicRig_Skin
+    second: {fileID: 2100000, guid: c47712ba8334dd9448578ab4db978077, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basicRig_Skin.001
+    second: {fileID: 2100000, guid: aef95ccdd46e3bc478fc5d133ba84df5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -91,7 +101,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: basicRig
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

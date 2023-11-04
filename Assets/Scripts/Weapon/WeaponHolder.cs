@@ -55,8 +55,12 @@ public class WeaponHolder : MonoBehaviour
             if (i == Convert.ToInt32(selectedWeapon))
             {
                 weapon.gameObject.SetActive(true);
-                GameObject socket = GameObject.Find("WeaponSocket");
-                weapon.gameObject.transform.position = socket.transform.position;
+                GameObject handSocket = GameObject.Find("RightHandSocket");
+                Transform weaponSocket = weapon.Find("WeaponSocket");
+                Transform weaponModel = weapon.Find("Model");
+
+                weapon.position = handSocket.transform.position;
+                weaponModel.position = weaponSocket.position;
             }
             else
             {
@@ -123,7 +127,7 @@ public class WeaponHolder : MonoBehaviour
             Destroy(currentW);
         }
 
-        GameObject socket = GameObject.Find("WeaponSocket");
+        GameObject socket = GameObject.Find("RightHandSocket");
         GameObject newWeapon = Instantiate(weapon, socket.transform.position, socket.transform.rotation);
         weapons.Add(newWeapon);
         newWeapon.transform.parent = this.transform;

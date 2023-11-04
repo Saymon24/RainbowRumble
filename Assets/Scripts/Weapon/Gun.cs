@@ -102,7 +102,6 @@ public class Gun : MonoBehaviour
             {
                 if (overlap[i].CompareTag("Enemy"))
                 {
-                    Debug.Log("Touché");
                     overlap[i].GetComponent<Enemy>().takeDamage(gunData.damage * damageMultiplicator);
                 }
             }

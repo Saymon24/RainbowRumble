@@ -13,6 +13,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private Animator animator;
     private bool dealDamage = false;
+    private bool performSwing = false;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Shoot.action.WasPressedThisFrame())
+        if (Shoot.action.WasPressedThisFrame() && !performSwing)
         {
             StartCoroutine(Swing());
         }
@@ -32,6 +33,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private IEnumerator Swing()
     {
+        performSwing = true;
         if (hasAnimation)
             animator.Play(attackAnimation);
         dealDamage = true;
@@ -39,6 +41,7 @@ public class MeleeWeapon : MonoBehaviour
         if (hasAnimation)
             animator.Play(idleAnimation);
         dealDamage = false;
+        performSwing = false;
     }
 
     private void OnTriggerEnter(Collider other)

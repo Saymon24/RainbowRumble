@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -60,7 +61,10 @@ public class WeaponHolder : MonoBehaviour
             }
             else
             {
-                weapon.gameObject.GetComponent<CancelReload>().CancelReloadOnWeapon();
+                
+
+                if (weapon.gameObject.TryGetComponent<CancelReload>(out CancelReload reload))
+                    reload.CancelReloadOnWeapon();
                 weapon.gameObject.SetActive(false);
             }
             i++;

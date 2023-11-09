@@ -53,6 +53,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("Touché");
         if (other.CompareTag("Enemy") && dealDamage)
         {
             print("Touché enemi");

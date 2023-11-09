@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7959560872179288637}
   - component: {fileID: 2073838267166102612}
   - component: {fileID: -200614297732485952}
+  - component: {fileID: 8304047915748002692}
   m_Layer: 29
   m_Name: HammerPrefab
   m_TagString: Untagged
@@ -140,6 +141,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplicator: 1
+--- !u!136 &8304047915748002692
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574716676989438834}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0
+  m_Height: 0.009047478
+  m_Direction: 0
+  m_Center: {x: -0.0688131, y: -0.6774714, z: -0.12575158}
 --- !u!1001 &4231983702733325423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,6 +276,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: bad98866e429986459833492218e37a3, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6089145643103313238, guid: bad98866e429986459833492218e37a3, type: 3}
       propertyPath: m_Layer
       value: 29
@@ -300,10 +328,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.10816276
-  m_Height: 0.64639956
+  m_Radius: 0.10677421
+  m_Height: 0.6725889
   m_Direction: 0
-  m_Center: {x: -0.0010485351, y: 0.4514807, z: -0.00029465556}
+  m_Center: {x: -0.009151528, y: 0.4514926, z: 0.0042693717}
 --- !u!4 &4409516324583433092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bad98866e429986459833492218e37a3, type: 3}

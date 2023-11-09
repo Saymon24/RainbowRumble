@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
     public float damage = 5f;
     public float spawnRate = 1f; // 1f -> Entity must spawn
+    public int score = 15;
+
+    private EnemyManager manager;
 
     [System.Serializable]
     public class DroppablePowerUp
@@ -34,6 +37,8 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         player = GameObject.Find("Player");
+
+        manager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
     }
 
     void Update()
@@ -50,6 +55,11 @@ public class Enemy : MonoBehaviour
     public void AttackPlayer()
     {
         player.GetComponent<HealthController>().TakeDamage(damage);
+    }
+
+    public void GiveScore()
+    {
+        GameObject.Find("GameManager").GetComponent<ScoreManager>().AddScore(score);
     }
 
     private int GetRarityPowerUp(int powerUpIndex)
@@ -118,6 +128,8 @@ public class Enemy : MonoBehaviour
     private void destroyEnemy()
     {
         SpawnPowerUp();
+        GiveScore();
+        manager.RemoveEnemy();
         Destroy(gameObject);
     }
 }

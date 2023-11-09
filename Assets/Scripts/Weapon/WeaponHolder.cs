@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -47,20 +48,36 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
+    private void changeWeapons()
+    {
+        
+    }
+
     private void SelectWeapon()
     {
         int i = 0;
+        
         foreach (Transform weapon in transform)
         {
             if (i == Convert.ToInt32(selectedWeapon))
             {
                 weapon.gameObject.SetActive(true);
-                GameObject socket = GameObject.Find("WeaponSocket");
-                weapon.gameObject.transform.position = socket.transform.position;
+                GameObject handSocket = GameObject.Find("RightHandSocket");
+                Transform weaponSocket = weapon.Find("WeaponSocket");
+                Transform weaponModel = weapon.Find("Model");
+                Animator anim = GameObject.Find("PlayerRig").GetComponent<Animator>();
+
+                weapon.position = handSocket.transform.position;
+                weaponModel.position = weaponSocket.position;
+
+                anim.runtimeAnimatorController = weapon.GetComponent<GetGunData>().GetData().playerRefAnimator;
             }
             else
             {
-                weapon.gameObject.GetComponent<CancelReload>().CancelReloadOnWeapon();
+                
+
+                if (weapon.gameObject.TryGetComponent<CancelReload>(out CancelReload reload))
+                    reload.CancelReloadOnWeapon();
                 weapon.gameObject.SetActive(false);
             }
             i++;
@@ -123,7 +140,7 @@ public class WeaponHolder : MonoBehaviour
             Destroy(currentW);
         }
 
-        GameObject socket = GameObject.Find("WeaponSocket");
+        GameObject socket = GameObject.Find("RightHandSocket");
         GameObject newWeapon = Instantiate(weapon, socket.transform.position, socket.transform.rotation);
         weapons.Add(newWeapon);
         newWeapon.transform.parent = this.transform;

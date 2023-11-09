@@ -47,12 +47,6 @@ public class WeaponHolder : MonoBehaviour
             SelectWeapon();
         }
     }
-
-    private void changeWeapons()
-    {
-        
-    }
-
     private void SelectWeapon()
     {
         int i = 0;
@@ -92,6 +86,20 @@ public class WeaponHolder : MonoBehaviour
     public GunData GetWeaponData()
     {
         return weapons[Convert.ToInt32(selectedWeapon)].GetComponent<GetGunData>().GetData();
+    }
+
+    public List<GunData> GetWeaponsData()
+    {
+        List<GunData> list = new List<GunData>
+        {
+            GetWeaponData()
+        };
+
+        if (weapons.Count > 1)
+        {
+            list.Add(weapons[Convert.ToInt32(!selectedWeapon)].GetComponent<GetGunData>().GetData());
+        }
+        return list;
     }
 
     public GunData GetWeaponDataFromIndex(int index)

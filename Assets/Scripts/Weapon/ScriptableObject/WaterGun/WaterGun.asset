@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WaterGun
   m_EditorClassIdentifier: 
   name: WaterGun
+  type: 0
   damage: 5
   range: 1000
   bulletSpeed: 3000
@@ -25,3 +26,6 @@ MonoBehaviour:
   throwForce: 0
   throwUpwardForce: 0
   throwCooldown: 0
+  timeBeforeExplosion: 0
+  expodeOnImpact: 0
+  playerRefAnimator: {fileID: 9100000, guid: 90f4b828d8ab4aa40b68611fdc91155b, type: 2}

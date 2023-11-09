@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4ce238b83c86984ab62081127681b02
+guid: d8feca74f87b5554b8b1ae4e707decac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Up
-      takeName: basicRig|FP_Narf_Up
-      internalID: 3757607586321403199
+      name: Reload
+      takeName: NarfArmature|Narf_Reload
+      internalID: 8261336539005105611
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 74
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -61,7 +61,7 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -120,11 +120,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: basicRig
+    rootMotionBoneName: NarfArmature
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f57d2f3ea587b8d438220eb40acef199, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6586b558fd91df345b2d9063d1a7fc8d, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1

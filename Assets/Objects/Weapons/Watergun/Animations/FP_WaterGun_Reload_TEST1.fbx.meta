@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4ce238b83c86984ab62081127681b02
+guid: 24439519446ca34448f131d61d6e5fe9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Up
-      takeName: basicRig|FP_Narf_Up
-      internalID: 3757607586321403199
+      name: Reload
+      takeName: WaterGun|WaterGun_Reload
+      internalID: -397155146164806371
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -120,11 +120,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: basicRig
+    rootMotionBoneName: WaterGun
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f57d2f3ea587b8d438220eb40acef199, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6050321a521e721419a9d4050a5ac09f, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1

@@ -77,6 +77,8 @@ public class WaterGun : MonoBehaviour
     {
         if (!gunData.reloading)
         {
+            GameObject.Find("PlayerRig").GetComponent<Animator>().Play("Reload", -1, 0f);
+            GetComponentInChildren<Animator>().Play("Reload", -1, 0f);
             StartCoroutine(Reload());
         }
     }
@@ -114,6 +116,12 @@ public class WaterGun : MonoBehaviour
 
     void Update()
     {
+        GameObject.Find("Model").transform.position = GameObject.Find("WeaponSocket").transform.position;
+        GameObject.Find("Model").transform.rotation = GameObject.Find("WeaponSocket").transform.rotation;
+
+        GameObject.Find("WeaponSocket").transform.position = GameObject.Find("RightHandSocket").transform.position;
+        GameObject.Find("WeaponSocket").transform.rotation = GameObject.Find("RightHandSocket").transform.rotation;
+
         waterP.UpdateDamageMultiplicator(GetComponent<WeaponDatasMultiplicator>().damageMultiplicator);
 
         if (shoot.action.IsPressed())

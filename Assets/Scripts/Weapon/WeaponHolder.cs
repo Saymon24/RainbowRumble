@@ -47,9 +47,15 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
+    private void changeWeapons()
+    {
+        
+    }
+
     private void SelectWeapon()
     {
         int i = 0;
+        
         foreach (Transform weapon in transform)
         {
             if (i == Convert.ToInt32(selectedWeapon))
@@ -58,9 +64,12 @@ public class WeaponHolder : MonoBehaviour
                 GameObject handSocket = GameObject.Find("RightHandSocket");
                 Transform weaponSocket = weapon.Find("WeaponSocket");
                 Transform weaponModel = weapon.Find("Model");
+                Animator anim = GameObject.Find("PlayerRig").GetComponent<Animator>();
 
                 weapon.position = handSocket.transform.position;
                 weaponModel.position = weaponSocket.position;
+
+                anim.runtimeAnimatorController = weapon.GetComponent<GetGunData>().GetData().playerRefAnimator;
             }
             else
             {

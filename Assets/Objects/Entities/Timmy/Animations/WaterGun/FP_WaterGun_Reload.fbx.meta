@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4ce238b83c86984ab62081127681b02
+guid: 92821e4b2693ee040a8ed8e746f2a534
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,7 +16,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tCannot find root motion transform 'NarfArmature'.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -33,18 +34,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Up
-      takeName: basicRig|FP_Narf_Up
-      internalID: 3757607586321403199
+      name: Reload
+      takeName: basicRig|FP_WaterGun_Reload
+      internalID: -2248052468236307232
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

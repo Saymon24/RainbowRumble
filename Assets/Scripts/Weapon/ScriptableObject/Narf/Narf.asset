@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Narf
   m_EditorClassIdentifier: 
   name: Narf
+  type: 0
   damage: 33
   range: 150
   bulletSpeed: 870
@@ -27,3 +28,4 @@ MonoBehaviour:
   throwCooldown: 0
   timeBeforeExplosion: 0
   expodeOnImpact: 0
+  playerRefAnimator: {fileID: 9100000, guid: e080adbb69d08f446a0706a914df3fcd, type: 2}

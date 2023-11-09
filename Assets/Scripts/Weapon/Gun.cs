@@ -40,6 +40,8 @@ public class Gun : MonoBehaviour
     {
         if (!gunData.reloading)
         {
+            GameObject.Find("PlayerRig").GetComponent<Animator>().Play("Reload", -1, 0f);
+            GetComponentInChildren<Animator>().Play("Reload",-1, 0f);
             StartCoroutine(Reload());
         }
     }
@@ -60,6 +62,12 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject.Find("WeaponSocket").transform.position = GameObject.Find("RightHandSocket").transform.position;
+        GameObject.Find("WeaponSocket").transform.rotation = GameObject.Find("RightHandSocket").transform.rotation;
+
+        GameObject.Find("Model").transform.position = GameObject.Find("WeaponSocket").transform.position;
+        GameObject.Find("Model").transform.rotation = GameObject.Find("WeaponSocket").transform.rotation;
+
         if (shoot.action.IsPressed())
         {
             if (gunData.currentAmmo > 0)

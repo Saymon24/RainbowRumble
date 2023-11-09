@@ -25,8 +25,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference left;
     [SerializeField] private InputActionReference jump;
 
+    private Animator animator;
+
     Vector3 velocity;
     bool isGrounded;
+
+    private void Start()
+    {
+        animator = GameObject.Find("PlayerRig").GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -49,6 +56,15 @@ public class PlayerMovement : MonoBehaviour
             x += 1;
         if (left.action.IsPressed())
             x -= 1;
+
+        if (z != 0 || x != 0)
+        {
+            animator.SetFloat("Speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
 

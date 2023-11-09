@@ -10,8 +10,8 @@ public class MainMenu : MonoBehaviour
 {
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
     }
 
     public void GoToSelectionMenu()

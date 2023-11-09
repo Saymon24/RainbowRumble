@@ -7,9 +7,6 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] private GunData weaponData;
     [SerializeField] private GameObject impactEffect;
     [SerializeField] private InputActionReference Shoot;
-    [SerializeField] private bool hasAnimation = false;
-    [SerializeField] private string attackAnimation;
-    [SerializeField] private string idleAnimation;
 
     private Animator animator;
     private bool dealDamage = false;
@@ -17,36 +14,45 @@ public class MeleeWeapon : MonoBehaviour
 
     private void Start()
     {
-        if (hasAnimation)
-        {
-            animator = GetComponent<Animator>();
-        }
+        animator = GameObject.Find("PlayerRig").GetComponent<Animator>();
     }
 
     private void Update()
     {
+        GameObject.Find("Model").transform.position = GameObject.Find("WeaponSocket").transform.position;
+        GameObject.Find("Model").transform.rotation = GameObject.Find("WeaponSocket").transform.rotation;
+
+        GameObject.Find("WeaponSocket").transform.position = GameObject.Find("RightHandSocket").transform.position;
+        GameObject.Find("WeaponSocket").transform.rotation = GameObject.Find("RightHandSocket").transform.rotation;
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            performSwing = false;
+            dealDamage = false;
+        }
+
         if (Shoot.action.WasPressedThisFrame() && !performSwing)
         {
-            StartCoroutine(Swing());
+            Attack();
         }
     }
 
-    private IEnumerator Swing()
+    public void EndMeleeAttack()
     {
-        performSwing = true;
-        if (hasAnimation)
-            animator.Play(attackAnimation);
-        dealDamage = true;
-        yield return new WaitForSeconds(1.5f);
-        if (hasAnimation)
-            animator.Play(idleAnimation);
-        dealDamage = false;
         performSwing = false;
+        dealDamage = false;
+    }
+
+    private void Attack()
+    {
+        animator.Play("Attack_1");
+     
+        performSwing = true;
+        dealDamage = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Touché");
         if (other.CompareTag("Enemy") && dealDamage)
         {
             print("Touché enemi");

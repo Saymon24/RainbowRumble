@@ -28,3 +28,4 @@ MonoBehaviour:
   throwCooldown: 0
   timeBeforeExplosion: 0
   expodeOnImpact: 0
+  playerRefAnimator: {fileID: 9100000, guid: b65185d177a526f46be5f8d38fdabdc3, type: 2}

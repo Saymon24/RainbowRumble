@@ -4,6 +4,6 @@ public class SmokeGift : MonoBehaviour
 {
     void Start()
     {
-        Destroy(this, 3f);
+        Destroy(gameObject, 3f);
     }
 }

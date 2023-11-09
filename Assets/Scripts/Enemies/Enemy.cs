@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public float spawnRate = 1f; // 1f -> Entity must spawn
     public int score = 15;
 
+    private EnemyManager manager;
+
     [System.Serializable]
     public class DroppablePowerUp
     {
@@ -35,6 +37,8 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         player = GameObject.Find("Player");
+
+        manager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
     }
 
     void Update()
@@ -125,6 +129,7 @@ public class Enemy : MonoBehaviour
     {
         SpawnPowerUp();
         GiveScore();
+        manager.RemoveEnemy();
         Destroy(gameObject);
     }
 }

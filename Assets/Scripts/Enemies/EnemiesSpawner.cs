@@ -13,11 +13,16 @@ public class EnemiesSpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemiesType;
 
     private float startSpawnTime;
+    private EnemyManager manager;
 
-    // Start is called before the first frame update
     void Start()
     {
         startSpawnTime = Time.time;
+        GameObject objManager = GameObject.Find("EnemyManager");
+        if (objManager != null)
+        {
+            manager = objManager.GetComponent<EnemyManager>();
+        }
     }
 
     private void spawnEnemy()
@@ -39,7 +44,11 @@ public class EnemiesSpawner : MonoBehaviour
 
             if (randomValue <= cumulativeRate)
             {
-                Instantiate(enemiesType[i], transform.position, Quaternion.identity);
+                if (manager.CanSpawnEnemy())
+                {
+                    Instantiate(enemiesType[i], transform.position, Quaternion.identity);
+                    manager.AddEnemy();
+                }
                 break;
             }
         }

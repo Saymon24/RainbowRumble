@@ -91,6 +91,11 @@ public class ThrowableObject : MonoBehaviour
     public void ChangeThrowableObject(GameObject newObj)
     {
         objectToThrow = newObj;
+        
+        if (objectToThrow.TryGetComponent(out GunData data))
+        {
+            gunData = data;
+        }
     }
 
 }

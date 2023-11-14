@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToSelectionMenu()
     {
-        LoadingManager.instance.changeNextSceneToLoad("EnemiesDebug");
+        LoadingManager.instance.changeNextSceneToLoad("AlphaLevel");
         SceneManager.LoadScene("LoadingScene");
     }
 

@@ -25,6 +25,9 @@ public class ThrowableObject : MonoBehaviour
 
     private void Update()
     {
+        if (!objectToThrow)
+            return;
+
         if (throwObject.action.WasPerformedThisFrame() && readyToThrow && gunData.currentAmmo > 0)
         {
             Throw();
@@ -59,7 +62,6 @@ public class ThrowableObject : MonoBehaviour
 
     private void Refill()
     {
-
         if (gunData.currentAmmo >= gunData.magSize)
             return;
 

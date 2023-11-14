@@ -46,7 +46,10 @@ public class HealthController : MonoBehaviour
 
     private void Die()
     {
-         
+         if (GameObject.Find("DeathUI").TryGetComponent(out DeathMenu death))
+         {
+            death.DeathScreen();
+         }
     }
 
     public void TakeDamage(float damage)

@@ -42,6 +42,7 @@ public class DeathMenu : MonoBehaviour
         CalculateCoins(Score.score);
 
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 

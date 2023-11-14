@@ -39,6 +39,16 @@ public class UnicornAI : MonoBehaviour
     {
         if (!collision.collider.CompareTag("Enemy") && !collision.collider.CompareTag("Untagged"))
         {
+            if (collision.collider.CompareTag("Player"))
+            {
+                if (!alreadyAttacked)
+                {
+                    print("sqdsqdqsdsq");
+                    alreadyAttacked = true;
+                    GetComponent<Enemy>().AttackPlayer();
+                    Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                }
+            }
             HandleAttack();
             StopDashing();
         }
@@ -120,17 +130,9 @@ public class UnicornAI : MonoBehaviour
 
     private void HandleAttack()
     {
-        //transform.LookAt(player);
         agent.enabled = true;
         agent.SetDestination(player.position);
         agent.enabled = false;
-
-        if (!alreadyAttacked)
-        {
-            alreadyAttacked = true;
-            GetComponent<Enemy>().AttackPlayer();
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
     }
 
     private void ResetAttack()

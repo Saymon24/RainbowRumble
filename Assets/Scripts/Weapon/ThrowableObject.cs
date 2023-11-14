@@ -92,9 +92,9 @@ public class ThrowableObject : MonoBehaviour
     {
         objectToThrow = newObj;
         
-        if (objectToThrow.TryGetComponent(out GunData data))
+        if (objectToThrow.TryGetComponent(out GetGunData data))
         {
-            gunData = data;
+            gunData = data.GetData();
         }
     }
 

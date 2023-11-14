@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f7fbcf4629d7d4b9b35e4c783d405d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  rb: {fileID: 0}
+  agent: {fileID: 5906875122687301377}
+  rb: {fileID: 6256734140279042816}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

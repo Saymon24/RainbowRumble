@@ -12,13 +12,4 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
     }
-
-    private void Update()
-    {
-        if (!player.GetComponent<PlayerManager>().isAlive)
-        {
-            LoadingManager.instance.changeNextSceneToLoad("MainMenu");
-            SceneManager.LoadScene("LoadingScene");
-        }
-    }
 }

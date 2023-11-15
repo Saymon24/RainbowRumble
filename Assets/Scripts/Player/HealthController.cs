@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,8 +46,10 @@ public class HealthController : MonoBehaviour
 
     private void Die()
     {
-        GameObject.Find("PlayerCamera").GetComponent<MouseLook>().enabled = false;
-        GetComponent<PlayerMovement>().enabled = false;
+         if (GameObject.Find("DeathUI").TryGetComponent(out DeathMenu death))
+         {
+            death.DeathScreen();
+         }
     }
 
     public void TakeDamage(float damage)

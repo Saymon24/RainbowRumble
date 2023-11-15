@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToSelectionMenu()
     {
-        LoadingManager.instance.changeNextSceneToLoad("EnemiesDebug");
+        LoadingManager.instance.changeNextSceneToLoad("AlphaLevel");
         SceneManager.LoadScene("LoadingScene");
     }
 

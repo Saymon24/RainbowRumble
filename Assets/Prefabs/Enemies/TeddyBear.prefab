@@ -149,7 +149,7 @@ MonoBehaviour:
     m_Bits: 8
   health: 120
   speed: 5
-  damage: 5
+  damage: 10
   spawnRate: 0.7
   score: 1000
   droppablePowerUp:

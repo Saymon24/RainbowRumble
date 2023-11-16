@@ -371,11 +371,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  health: 300
+  health: 1000
   speed: 7
-  damage: 10
-  spawnRate: 0.4
-  score: 100
+  damage: 40
+  spawnRate: 0.00001
+  score: 10000
   droppablePowerUp:
   - powerUp: {fileID: 6934815424580783200, guid: 9b659018ea212484abebccc668bef652, type: 3}
     spawnRate: 0.33

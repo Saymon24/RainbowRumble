@@ -57,7 +57,8 @@ public class BossTeddyBearsAI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        if (!agent.SetDestination(player.position))
+            Destroy(this.gameObject);
     }
 
     private void HandleAttack()

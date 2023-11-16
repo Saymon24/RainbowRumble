@@ -23,6 +23,7 @@ public class Plane : MonoBehaviour
     {
         if (!hasExploded)
         {
+            AudioManager.instance.PlaySFX("Explosion");
             Explode();
             hasExploded = true;
             //Destroy(gameObject);

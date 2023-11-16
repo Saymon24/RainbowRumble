@@ -437,12 +437,32 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
   - name: War
-    clip: {fileID: 8300000, guid: 1ce5ed8af283cff46a14a7410b6f265e, type: 3}
+    clip: {fileID: 8300000, guid: 8548b22c40baf454385eaa9f20350f8f, type: 3}
     volume: 0.1
     pitch: 1
   sfxSounds:
-  - name: Bomb
-    clip: {fileID: 8300000, guid: 32f4f66c52a99ec47b9b629e1846d091, type: 3}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: d06f6c3fde57cad4e849c0e836e56527, type: 3}
+    volume: 0.6
+    pitch: 1
+  - name: Hammer1
+    clip: {fileID: 8300000, guid: eb43c03e291887c43968adff884f4c1e, type: 3}
+    volume: 0.6
+    pitch: 1
+  - name: Hammer2
+    clip: {fileID: 8300000, guid: 2609065a5e78ef644b5dba8b097eaccf, type: 3}
+    volume: 0.6
+    pitch: 1
+  - name: Hammer3
+    clip: {fileID: 8300000, guid: 89baf3f7d1dc2054b91d37c0493bc086, type: 3}
+    volume: 0.6
+    pitch: 1
+  - name: Narf
+    clip: {fileID: 8300000, guid: f054a2d0cdcdfbf4d9c985db694e4785, type: 3}
+    volume: 0.6
+    pitch: 1
+  - name: NarfReload
+    clip: {fileID: 8300000, guid: 3dac60f02dd99a04480245cbd1bdfe9a, type: 3}
     volume: 0.6
     pitch: 1
   voiceSounds:

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3600655739083317607}
   - component: {fileID: 6256734140279042816}
+  - component: {fileID: -5062665927592227048}
   - component: {fileID: 5906875122687301377}
   - component: {fileID: 5047038044030594991}
   - component: {fileID: 5166745940360042056}
-  - component: {fileID: 6268408347589595921}
   m_Layer: 0
   m_Name: Unicorn
   m_TagString: Enemy
@@ -64,6 +64,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!136 &-5062665927592227048
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2776051795049151537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.0358508
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.011571601, z: 0}
 --- !u!195 &5906875122687301377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -155,28 +178,6 @@ MonoBehaviour:
   timeBetweenDash: 3
   dashDuration: 3
   timeBetweenAttacks: 5
---- !u!64 &6268408347589595921
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2776051795049151537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7398509403596113055, guid: 90c1960c225ff694eb44836a18561fc2, type: 3}
 --- !u!1001 &6458047578048695070
 PrefabInstance:
   m_ObjectHideFlags: 0

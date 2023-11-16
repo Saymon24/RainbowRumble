@@ -46,6 +46,7 @@ public class MeleeWeapon : MonoBehaviour
     private void Attack()
     {
         animator.Play("Attack_1");
+        AudioManager.instance.PlaySFX("Hammer" + Random.Range(1, 4));
      
         performSwing = true;
         dealDamage = true;

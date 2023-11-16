@@ -42,6 +42,7 @@ public class Gun : MonoBehaviour
         {
             GameObject.Find("PlayerRig").GetComponent<Animator>().Play("Reload", -1, 0f);
             GetComponentInChildren<Animator>().Play("Reload",-1, 0f);
+            AudioManager.instance.PlaySFX("NarfReload");
             StartCoroutine(Reload());
         }
     }
@@ -114,6 +115,7 @@ public class Gun : MonoBehaviour
                 }
             }
             rayfireGun.Shoot();
+            AudioManager.instance.PlaySFX("Narf");
         }
     }
 }

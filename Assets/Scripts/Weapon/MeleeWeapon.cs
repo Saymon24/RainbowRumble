@@ -59,17 +59,7 @@ public class MeleeWeapon : MonoBehaviour
         if (other.CompareTag("Enemy") && dealDamage)
         {
             print("I deal damage to enemy");
-            other.GetComponent<Enemy>().takeDamage(30000);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print("Touché");
-        if (other.CompareTag("Enemy") && dealDamage)
-        {
-            print("Touché enemi");
-            other.GetComponent<Enemy>().takeDamage(30000);
+            other.GetComponent<Enemy>().takeDamage(weaponData.damage);
         }
     }
 

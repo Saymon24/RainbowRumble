@@ -53,7 +53,7 @@ public class MeleeWeapon : MonoBehaviour
         dealDamage = true;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         print("OntriggerStay");
         if (other.CompareTag("Enemy") && dealDamage)

@@ -73,7 +73,7 @@ public class DeathMenu : MonoBehaviour
 
     public void TryAgain()
     {
-        LoadingManager.instance.changeNextSceneToLoad("Terrain");
+        LoadingManager.instance.changeNextSceneToLoad(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("LoadingScene");
     }

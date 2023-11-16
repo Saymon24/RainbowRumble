@@ -13587,7 +13587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1562906593831354252, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: MaxEnemyNumber
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1703193130848154377, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13631,7 +13631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2096124663743273605, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: GiftSpawnPoints.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2096124663743273605, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: GiftSpawnPoints.Array.data[0]
@@ -13649,6 +13649,10 @@ PrefabInstance:
       propertyPath: GiftSpawnPoints.Array.data[3]
       value: 
       objectReference: {fileID: 997381519}
+    - target: {fileID: 2096124663743273605, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
+      propertyPath: GiftSpawnPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 145082229}
     - target: {fileID: 8126965335102906847, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: m_Name
       value: GameManager

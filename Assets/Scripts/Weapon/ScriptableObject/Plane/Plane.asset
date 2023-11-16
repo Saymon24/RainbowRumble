@@ -18,10 +18,10 @@ MonoBehaviour:
   range: 5
   bulletSpeed: 5
   impactForce: 600
-  currentAmmo: 1
-  magSize: 1
+  currentAmmo: 2
+  magSize: 2
   fireRate: 0
-  reloadTime: 3
+  reloadTime: 10
   reloading: 0
   throwForce: 10
   throwUpwardForce: 0

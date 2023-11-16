@@ -28,9 +28,13 @@ public class GiftManager : MonoBehaviour
         if (!canSpawn)
             return;
 
+        if (SpawnedObject != null)
+            timer = Time.time;
+
         if (Time.time - timer >= SpawnTime)
         {
             timer = Time.time;
+
             if (Random.Range(0f, 100f) <= ProbabiltySpawn)
             {
                 SpawnGift();

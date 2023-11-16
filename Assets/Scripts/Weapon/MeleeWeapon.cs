@@ -45,6 +45,7 @@ public class MeleeWeapon : MonoBehaviour
 
     private void Attack()
     {
+        print("J'attaque");
         animator.Play("Attack_1");
         AudioManager.instance.PlaySFX("Hammer" + Random.Range(1, 4));
      
@@ -52,13 +53,13 @@ public class MeleeWeapon : MonoBehaviour
         dealDamage = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        print("Touché");
+        print("OntriggerStay");
         if (other.CompareTag("Enemy") && dealDamage)
         {
-            print("Touché enemi");
-            other.GetComponent<Enemy>().takeDamage(30000);
+            print("I deal damage to enemy");
+            other.GetComponent<Enemy>().takeDamage(weaponData.damage);
         }
     }
 

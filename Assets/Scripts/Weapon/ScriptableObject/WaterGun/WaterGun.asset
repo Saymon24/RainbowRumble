@@ -21,7 +21,7 @@ MonoBehaviour:
   currentAmmo: 88.8335
   magSize: 100
   fireRate: 10
-  reloadTime: 0
+  reloadTime: 3
   reloading: 0
   throwForce: 0
   throwUpwardForce: 0

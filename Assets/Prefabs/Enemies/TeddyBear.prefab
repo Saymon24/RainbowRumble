@@ -150,7 +150,7 @@ MonoBehaviour:
   health: 120
   speed: 5
   damage: 5
-  spawnRate: 0.8
+  spawnRate: 0.7
   score: 1000
   droppablePowerUp:
   - powerUp: {fileID: 6934815424580783200, guid: 9b659018ea212484abebccc668bef652, type: 3}

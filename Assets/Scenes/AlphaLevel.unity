@@ -874,6 +874,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.4322715
@@ -1027,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 329051691417030727, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
+      propertyPath: spawnRate
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: enemiesType.Array.size
@@ -2059,6 +2067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_l_2C_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 478812, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.985443
@@ -2120,6 +2132,10 @@ PrefabInstance:
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Name
       value: Crystals_s_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 451776, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3080,6 +3096,10 @@ PrefabInstance:
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_05 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 427638, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_LocalScale.x
@@ -4164,6 +4184,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 189240, guid: 144ab75a8816848458f1d673828eb14b, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: 144ab75a8816848458f1d673828eb14b, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.783
@@ -4909,6 +4933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_l_2C_05
       objectReference: {fileID: 0}
+    - target: {fileID: 189366, guid: b12fe8d52d5050c4e876ed8d1437d81e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 433450, guid: b12fe8d52d5050c4e876ed8d1437d81e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.6806
@@ -5619,6 +5647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_s_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 451776, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.0695
@@ -5935,6 +5967,10 @@ PrefabInstance:
     - target: {fileID: 329051691417030727, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
+      propertyPath: spawnRate
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: enemiesType.Array.size
@@ -6345,6 +6381,10 @@ PrefabInstance:
     - target: {fileID: 157584, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 157584, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 451462, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8099,6 +8139,10 @@ PrefabInstance:
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_Name
       value: Crystals_s_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 488734, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -9941,6 +9985,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 488734, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 10.051
@@ -10476,6 +10524,10 @@ PrefabInstance:
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Name
       value: Crystals_s_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400452, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_LocalScale.x
@@ -11323,6 +11375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.4322715
@@ -11577,6 +11633,10 @@ PrefabInstance:
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Name
       value: Crystals_s_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 451776, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_LocalScale.x
@@ -13005,7 +13065,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1562906593831354252, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: MaxEnemyNumber
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1703193130848154377, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13197,6 +13257,10 @@ PrefabInstance:
     - target: {fileID: 123058, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
       propertyPath: m_Name
       value: Crystals_l_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 123058, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 460122, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
       propertyPath: m_LocalScale.x
@@ -13446,6 +13510,10 @@ PrefabInstance:
     - target: {fileID: 194598, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 194598, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 477296, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
       propertyPath: m_LocalScale.x
@@ -16086,6 +16154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_l_02
       objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 435100, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.4295
@@ -18442,6 +18514,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400452, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_LocalScale.x
       value: 18.749
@@ -19538,6 +19614,10 @@ PrefabInstance:
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Name
       value: Crystals_s_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400452, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_LocalScale.x
@@ -20889,6 +20969,10 @@ PrefabInstance:
     - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 411404, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_LocalScale.x
@@ -22364,6 +22448,10 @@ PrefabInstance:
     - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_Name
       value: Stairs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -25147,6 +25235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal_crk_m_02
       objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 493624, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -97.892044
@@ -26049,6 +26141,10 @@ PrefabInstance:
     - target: {fileID: 109242, guid: eda396f1ce71c3f4fbe8561f570c6d25, type: 3}
       propertyPath: m_Name
       value: Crystals_l_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 109242, guid: eda396f1ce71c3f4fbe8561f570c6d25, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 458668, guid: eda396f1ce71c3f4fbe8561f570c6d25, type: 3}
       propertyPath: m_LocalScale.x
@@ -27514,6 +27610,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
+      propertyPath: spawnRate
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 662056777340032925, guid: f91e28000bb0d754c8a073e1534f2f6d, type: 3}
       propertyPath: enemiesType.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -28102,6 +28202,10 @@ PrefabInstance:
     - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 478812, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
       propertyPath: m_LocalScale.x
@@ -29134,6 +29238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal_crk_m_01
       objectReference: {fileID: 0}
+    - target: {fileID: 130272, guid: 5b007ccdb69421848bf955295a072903, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 441146, guid: 5b007ccdb69421848bf955295a072903, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.9966415
@@ -29387,6 +29495,10 @@ PrefabInstance:
     - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_Name
       value: Stairs (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -30587,6 +30699,10 @@ PrefabInstance:
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_Name
       value: Crystals_l_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 435100, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_LocalScale.x
@@ -32668,6 +32784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_s_04
       objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400452, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.7766
@@ -32935,6 +33055,10 @@ PrefabInstance:
     - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_Name
       value: Stairs (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -37562,6 +37686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.4322715
@@ -39006,6 +39134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_l_03
       objectReference: {fileID: 0}
+    - target: {fileID: 117804, guid: c09e608e3210c2b4fb62db639ccf75f8, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 467076, guid: c09e608e3210c2b4fb62db639ccf75f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.7943
@@ -39530,6 +39662,10 @@ PrefabInstance:
     - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 419014, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40983,6 +41119,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 451776, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.223
@@ -41270,6 +41410,10 @@ PrefabInstance:
     - target: {fileID: 144106, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
       propertyPath: m_Name
       value: Crystal_m_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 144106, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 408756, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
       propertyPath: m_LocalScale.x
@@ -43118,6 +43262,10 @@ PrefabInstance:
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 493624, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45426,6 +45574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_s_2C_04
       objectReference: {fileID: 0}
+    - target: {fileID: 165046, guid: 85ad18cd97a4eff4a8a48baccc120432, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 447874, guid: 85ad18cd97a4eff4a8a48baccc120432, type: 3}
       propertyPath: m_LocalScale.x
       value: 9.1672
@@ -45860,6 +46012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_l_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 435100, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.5279
@@ -46173,6 +46329,10 @@ PrefabInstance:
     - target: {fileID: 190242, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
       propertyPath: m_Name
       value: Crystals_s_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 190242, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 478410, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
       propertyPath: m_LocalScale.x
@@ -46528,6 +46688,10 @@ PrefabInstance:
     - target: {fileID: 157644, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_2C_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 157644, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 406312, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
       propertyPath: m_LocalScale.x
@@ -47201,6 +47365,10 @@ PrefabInstance:
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 427638, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_LocalScale.x
@@ -48355,6 +48523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_s_2C_05
       objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 427638, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.287
@@ -48440,6 +48612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystals_s_2C_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 411404, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2716
@@ -48513,6 +48689,10 @@ PrefabInstance:
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_Name
       value: Crystals_s_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 488734, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -49031,6 +49211,10 @@ PrefabInstance:
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 493624, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52730,6 +52914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3102894352443004870, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3765612093451808043, guid: f1cf842565bbc2d459c1f32787dd6f4d, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.4322715
@@ -53637,6 +53825,10 @@ PrefabInstance:
     - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 419014, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_LocalPosition.x

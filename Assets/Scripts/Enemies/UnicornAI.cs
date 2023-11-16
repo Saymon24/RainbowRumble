@@ -43,7 +43,6 @@ public class UnicornAI : MonoBehaviour
             {
                 if (!alreadyAttacked)
                 {
-                    print("sqdsqdqsdsq");
                     alreadyAttacked = true;
                     GetComponent<Enemy>().AttackPlayer();
                     Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -125,13 +124,15 @@ public class UnicornAI : MonoBehaviour
     }
     private void GoToPlayer()
     {
-        agent.SetDestination(player.position);
+        if (!agent.SetDestination(player.position))
+            Destroy(this.gameObject);
     }
 
     private void HandleAttack()
     {
         agent.enabled = true;
-        agent.SetDestination(player.position);
+        if (!agent.SetDestination(player.position))
+            Destroy(this.gameObject);
         agent.enabled = false;
     }
 

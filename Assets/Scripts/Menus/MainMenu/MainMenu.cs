@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     {
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         UnityEngine.Cursor.visible = true;
+        AudioManager.instance.PlayMusic("MainTheme");
     }
 
     public void GoToSelectionMenu()

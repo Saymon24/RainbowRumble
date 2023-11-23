@@ -28,6 +28,7 @@ public class LoadingScene : MonoBehaviour
             isLoading = true;
             Debug.Log(LoadingManager.instance.getNextSceneToLoad());
             GetComponent<LoadingScene>().LoadScene(LoadingManager.instance.getNextSceneToLoad());
+            AudioManager.instance.PlayMusic("War");
         }
     }
 

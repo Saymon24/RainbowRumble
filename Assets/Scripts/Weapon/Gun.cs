@@ -1,3 +1,4 @@
+using EZCameraShake;
 using RayFire;
 using System.Collections;
 using System.Collections.Generic;
@@ -116,6 +117,7 @@ public class Gun : MonoBehaviour
             }
             rayfireGun.Shoot();
             AudioManager.instance.PlaySFX("Narf");
+            CameraShaker.Instance.ShakeOnce(2f, 2f, 0.4f, 0.2f);
         }
     }
 }

@@ -1,3 +1,4 @@
+using EZCameraShake;
 using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,11 +50,13 @@ public class HealthController : MonoBehaviour
          if (GameObject.Find("DeathUI").TryGetComponent(out DeathMenu death))
          {
             death.DeathScreen();
+            AudioManager.instance.PlayMusic("Death");
          }
     }
 
     public void TakeDamage(float damage)
     {
+        CameraShaker.Instance.ShakeOnce(2f, 7f, 0.5f, 0.5f);
         if (_currentPlayerHealth - damage >= 0)
         {
             HurtFlash(damage);

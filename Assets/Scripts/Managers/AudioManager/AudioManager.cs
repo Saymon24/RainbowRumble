@@ -29,7 +29,6 @@ public class AudioManager : MonoBehaviour
 
     public void Start()
     {
-        PlayMusic("War");
     }
 
     public void PlayMusic(string name)

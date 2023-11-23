@@ -5941,6 +5941,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 213825325105394453, guid: 585faeac2c0b5144fb047c4482ea4750, type: 3}
+      propertyPath: demolitionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 213825325105394453, guid: 585faeac2c0b5144fb047c4482ea4750, type: 3}
       propertyPath: damage.maxDamage
       value: 100
       objectReference: {fileID: 0}
@@ -5958,7 +5962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2191900600509253683, guid: 585faeac2c0b5144fb047c4482ea4750, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.51
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2191900600509253683, guid: 585faeac2c0b5144fb047c4482ea4750, type: 3}
       propertyPath: m_LocalPosition.z

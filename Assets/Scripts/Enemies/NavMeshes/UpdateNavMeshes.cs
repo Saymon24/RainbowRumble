@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
@@ -6,15 +7,21 @@ using UnityEngine;
 public class UpdateNavMeshes : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private bool isUpdate = true;
-    [SerializeField] private float NavMeshUpdateTime = 1f;
     [SerializeField] private NavMeshSurface[] surfaces;
-    public void ForceUpdateNavMeshes()
+    
+    public void startReload()
+    {
+        StartCoroutine(ForceUpdateNavMeshes());
+    }
+    private IEnumerator ForceUpdateNavMeshes()
     {
         for (int i = 0; i < surfaces.Length; i++)
         {
             if (surfaces[i] != null)
-                surfaces[i].BuildNavMesh();
+            {
+                var async = surfaces[i].UpdateNavMesh(surfaces[i].navMeshData);
+                yield return async;
+            }
         }
     }
 }

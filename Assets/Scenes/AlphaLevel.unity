@@ -18484,7 +18484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8777578424627114080, guid: bdbf8b71e2f61c740b9887840431f1f3, type: 3}
       propertyPath: fadeTime
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8777578424627114080, guid: bdbf8b71e2f61c740b9887840431f1f3, type: 3}
       propertyPath: SpawnName

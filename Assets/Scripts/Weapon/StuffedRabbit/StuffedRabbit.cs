@@ -49,7 +49,8 @@ public class StuffedRabbit : MonoBehaviour
     {
         float damageMultiplicator = GetComponent<WeaponDatasMultiplicator>().damageMultiplicator;
 
-        Instantiate(explosionParticles, transform.position, Quaternion.identity);
+        GameObject rb = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+        rb.transform.localScale = rb.transform.localScale * 3;
         Collider[] colliders = Physics.OverlapSphere(transform.position, grenadeData.range);
 
         foreach(Collider nearbyObject in colliders)

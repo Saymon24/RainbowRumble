@@ -39,8 +39,6 @@ public class GiftUI : MonoBehaviour
         while (giftSpawnPlace.color.a > 0.0f)
         {
             giftSpawnPlace.color = new Color(giftSpawnPlace.color.r, giftSpawnPlace.color.g, giftSpawnPlace.color.b, giftSpawnPlace.color.a - (Time.deltaTime / fadeTime));
-            print("New color: " + giftSpawnPlace.color.ToString());
-            print(Time.deltaTime.ToString());
             yield return null;
         }
     }
@@ -57,9 +55,6 @@ public class GiftUI : MonoBehaviour
 
     public void SetGiftSpawnPlace(string place)
     {
-
-        print("Je set en active l'objet text");
-
         SpawnName.SetActive(true);
         giftSpawnPlace.text = "A gift has spawn in: " + place;
         timer = Time.time;

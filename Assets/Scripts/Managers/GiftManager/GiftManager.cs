@@ -49,8 +49,16 @@ public class GiftManager : MonoBehaviour
         if (SpawnedObject != null)
             return;
 
+        print("JE fais spawn in cadeau");
+
         int index = Random.Range(0, GiftSpawnPoints.Count);
         SpawnedObject = Instantiate(Spawnable, GiftSpawnPoints[index].position, Quaternion.identity);
+
+        if(GameObject.Find("openGift").TryGetComponent(out GiftUI ui))
+        {
+            ui.SetGiftSpawnPlace(GiftSpawnPoints[index].name);
+        }
+
     }
 
 }

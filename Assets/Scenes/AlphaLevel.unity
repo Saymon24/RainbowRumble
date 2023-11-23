@@ -2072,6 +2072,10 @@ PrefabInstance:
       value: Crystals_l_2C_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -2136,6 +2140,10 @@ PrefabInstance:
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Name
       value: Crystals_s_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_TagString
@@ -3100,6 +3108,10 @@ PrefabInstance:
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_05 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_TagString
@@ -4186,7 +4198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 189240, guid: 144ab75a8816848458f1d673828eb14b, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 189240, guid: 144ab75a8816848458f1d673828eb14b, type: 3}
       propertyPath: m_TagString
@@ -5012,6 +5024,10 @@ PrefabInstance:
       value: Crystals_l_2C_05
       objectReference: {fileID: 0}
     - target: {fileID: 189366, guid: b12fe8d52d5050c4e876ed8d1437d81e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 189366, guid: b12fe8d52d5050c4e876ed8d1437d81e, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -5724,6 +5740,10 @@ PrefabInstance:
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Name
       value: Crystals_s_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_TagString
@@ -6463,6 +6483,10 @@ PrefabInstance:
     - target: {fileID: 157584, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 157584, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 157584, guid: 64dd6a76a0069c342a89a75810e93b17, type: 3}
       propertyPath: m_TagString
@@ -7861,7 +7885,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 137
+    m_Bits: 136
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -8221,6 +8245,10 @@ PrefabInstance:
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_Name
       value: Crystals_s_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_TagString
@@ -8891,6 +8919,11 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852592614180247052, guid: 4ba634ee43ad3a2498ad5cc302046f0a, type: 3}
   m_PrefabInstance: {fileID: 1973184069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &382012379 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
+  m_PrefabInstance: {fileID: 1118670705}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &392007444
 GameObject:
@@ -10066,7 +10099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_TagString
@@ -10607,6 +10640,10 @@ PrefabInstance:
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Name
       value: Crystals_s_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_TagString
@@ -11716,6 +11753,10 @@ PrefabInstance:
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Name
       value: Crystals_s_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_TagString
@@ -13214,6 +13255,22 @@ PrefabInstance:
       propertyPath: GiftSpawnPoints.Array.data[4]
       value: 
       objectReference: {fileID: 145082229}
+    - target: {fileID: 4424336341985676034, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
+      propertyPath: surfaces.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424336341985676034, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
+      propertyPath: surfaces.Array.data[0]
+      value: 
+      objectReference: {fileID: 333553941}
+    - target: {fileID: 4424336341985676034, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
+      propertyPath: surfaces.Array.data[1]
+      value: 
+      objectReference: {fileID: 663024502}
+    - target: {fileID: 4424336341985676034, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
+      propertyPath: surfaces.Array.data[2]
+      value: 
+      objectReference: {fileID: 322729195}
     - target: {fileID: 8126965335102906847, guid: 4f382933c842f3f4cb0eb680ca6a4f6f, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -13340,6 +13397,10 @@ PrefabInstance:
     - target: {fileID: 123058, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
       propertyPath: m_Name
       value: Crystals_l_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 123058, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 123058, guid: 67b8c465ab84ddd489ca7eec1e4da947, type: 3}
       propertyPath: m_TagString
@@ -13593,6 +13654,10 @@ PrefabInstance:
     - target: {fileID: 194598, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 194598, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 194598, guid: 82b756ae85ba6ea4495e8ae5d260e8af, type: 3}
       propertyPath: m_TagString
@@ -14909,7 +14974,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 137
+    m_Bits: 136
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -16244,6 +16309,10 @@ PrefabInstance:
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_Name
       value: Crystals_l_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_TagString
@@ -18611,7 +18680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_TagString
@@ -19713,6 +19782,10 @@ PrefabInstance:
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Name
       value: Crystals_s_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_TagString
@@ -21067,6 +21140,10 @@ PrefabInstance:
     - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_Name
       value: Crystals_s_2C_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_TagString
@@ -25264,6 +25341,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1083762464}
     m_Modifications:
+    - target: {fileID: -3507743211478322809, guid: 27dec345d060974469f685e519f29e2a, type: 3}
+      propertyPath: centerPosition.x
+      value: 1.476044e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3507743211478322809, guid: 27dec345d060974469f685e519f29e2a, type: 3}
+      propertyPath: centerPosition.y
+      value: 0.0000021183243
+      objectReference: {fileID: 0}
+    - target: {fileID: -3507743211478322809, guid: 27dec345d060974469f685e519f29e2a, type: 3}
+      propertyPath: centerPosition.z
+      value: -0.0000055747455
+      objectReference: {fileID: 0}
     - target: {fileID: 64965657161974141, guid: 27dec345d060974469f685e519f29e2a, type: 3}
       propertyPath: m_Name
       value: Cube.063 (21)
@@ -25332,6 +25421,10 @@ PrefabInstance:
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_TagString
@@ -26241,6 +26334,10 @@ PrefabInstance:
       value: Crystals_l_01
       objectReference: {fileID: 0}
     - target: {fileID: 109242, guid: eda396f1ce71c3f4fbe8561f570c6d25, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 109242, guid: eda396f1ce71c3f4fbe8561f570c6d25, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -26317,35 +26414,35 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1507492217}
     m_Modifications:
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5161018
+      value: 4.4125786
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4971566
+      value: 7.824315
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3481776
+      value: 3.923839
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 147.87
+      value: -83.57471
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.44
+      value: 110.32119
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 151.68
+      value: -66.26448
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710605
+      value: 0.70574784
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalRotation.x
@@ -26353,7 +26450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710754
+      value: 0.70846313
       objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalRotation.z
@@ -28306,6 +28403,10 @@ PrefabInstance:
       value: Crystals_l_2C_01
       objectReference: {fileID: 0}
     - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 186552, guid: ff56b28a4e4e5f04fb0582f674ce090e, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -29339,6 +29440,10 @@ PrefabInstance:
     - target: {fileID: 130272, guid: 5b007ccdb69421848bf955295a072903, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 130272, guid: 5b007ccdb69421848bf955295a072903, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 130272, guid: 5b007ccdb69421848bf955295a072903, type: 3}
       propertyPath: m_TagString
@@ -30695,6 +30800,10 @@ PrefabInstance:
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_Name
       value: Crystals_l_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_TagString
@@ -32779,6 +32888,10 @@ PrefabInstance:
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_Name
       value: Crystals_s_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 181692, guid: 4c029daacd00ab9478d6da0946ed280c, type: 3}
       propertyPath: m_TagString
@@ -36112,6 +36225,7 @@ Transform:
   - {fileID: 2079627756}
   - {fileID: 1040704312}
   - {fileID: 198838840}
+  - {fileID: 382012379}
   - {fileID: 1040645749}
   m_Father: {fileID: 1544356379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39131,6 +39245,10 @@ PrefabInstance:
       value: Crystals_l_03
       objectReference: {fileID: 0}
     - target: {fileID: 117804, guid: c09e608e3210c2b4fb62db639ccf75f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 117804, guid: c09e608e3210c2b4fb62db639ccf75f8, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -39658,6 +39776,10 @@ PrefabInstance:
     - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_Name
       value: Crystals_l_2C_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_TagString
@@ -41113,7 +41235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113602, guid: 43e2f049d99eb284a991e3bfd3803f6a, type: 3}
       propertyPath: m_TagString
@@ -41406,6 +41528,10 @@ PrefabInstance:
     - target: {fileID: 144106, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
       propertyPath: m_Name
       value: Crystal_m_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 144106, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 144106, guid: 617ce2e39bcde1e49bcb0fb83e2ffb0e, type: 3}
       propertyPath: m_TagString
@@ -41854,6 +41980,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1507492217}
     m_Modifications:
+    - target: {fileID: 582906785605597698, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
+      propertyPath: centerPosition.x
+      value: -7.38022e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 582906785605597698, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
+      propertyPath: centerPosition.z
+      value: 0.0000034394318
+      objectReference: {fileID: 0}
     - target: {fileID: 4321873352812833510, guid: 4b6f184e904a0cb43a4239a2d5044a52, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.436427
@@ -43258,6 +43392,10 @@ PrefabInstance:
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_TagString
@@ -45571,6 +45709,10 @@ PrefabInstance:
       value: Crystals_s_2C_04
       objectReference: {fileID: 0}
     - target: {fileID: 165046, guid: 85ad18cd97a4eff4a8a48baccc120432, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 165046, guid: 85ad18cd97a4eff4a8a48baccc120432, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -46009,6 +46151,10 @@ PrefabInstance:
       value: Crystals_l_02 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 191340, guid: df8f4c72ff1b4804294f78d3ccf4618c, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -46325,6 +46471,10 @@ PrefabInstance:
     - target: {fileID: 190242, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
       propertyPath: m_Name
       value: Crystals_s_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 190242, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 190242, guid: 2fe2f0ebed05f5a4a9448cd0a10498cb, type: 3}
       propertyPath: m_TagString
@@ -46684,6 +46834,10 @@ PrefabInstance:
     - target: {fileID: 157644, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_2C_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 157644, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 157644, guid: 803691f7d6ddcd9409255f99e9397608, type: 3}
       propertyPath: m_TagString
@@ -47363,6 +47517,10 @@ PrefabInstance:
       value: Crystals_s_2C_05 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -47675,6 +47833,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 847469243}
     m_Modifications:
+    - target: {fileID: 1450214503005116324, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
+      propertyPath: centerPosition.x
+      value: 0.0000023860844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450214503005116324, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
+      propertyPath: centerPosition.y
+      value: 0.000073841205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450214503005116324, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
+      propertyPath: centerPosition.z
+      value: -0.000008435586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450214503005116324, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
+      propertyPath: centerDirection.w
+      value: 0.9999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450214503005116324, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
+      propertyPath: centerDirection.y
+      value: -0.0000000012933015
+      objectReference: {fileID: 0}
     - target: {fileID: 3417072206056040893, guid: 4452c2fbe363b3d49868fb159e99d5fb, type: 3}
       propertyPath: m_Name
       value: Cube.072 (61)
@@ -48520,6 +48698,10 @@ PrefabInstance:
       value: Crystals_s_2C_05
       objectReference: {fileID: 0}
     - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 110668, guid: 12d79a1a803c785438164c3a48da3970, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -48609,6 +48791,10 @@ PrefabInstance:
       value: Crystals_s_2C_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 124288, guid: 7462cc0a8accf1447809bd84ead6e9a3, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -48685,6 +48871,10 @@ PrefabInstance:
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_Name
       value: Crystals_s_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 179574, guid: e6196d1b105534d41a241a9fa2a557f2, type: 3}
       propertyPath: m_TagString
@@ -49207,6 +49397,10 @@ PrefabInstance:
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_Name
       value: Crystal_crk_m_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 113630, guid: 27634d4147fd96b40b5d7e4206c9062e, type: 3}
       propertyPath: m_TagString
@@ -53823,6 +54017,10 @@ PrefabInstance:
       value: Crystals_l_2C_03 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 117666, guid: 38a7bd1c4c1d0574190ae878b1dc1250, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -54144,4 +54342,3 @@ SceneRoots:
   - {fileID: 643662826}
   - {fileID: 1459704608}
   - {fileID: 1122235105}
-  - {fileID: 1118670705}

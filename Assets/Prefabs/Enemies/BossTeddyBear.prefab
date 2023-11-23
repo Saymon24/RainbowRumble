@@ -266,10 +266,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.86
+  m_Radius: 0.33365226
+  m_Height: 1.4154618
   m_Direction: 1
-  m_Center: {x: 0, y: 0.08, z: 0}
+  m_Center: {x: 0.002183056, y: -0.16168633, z: 0}
 --- !u!195 &4968316180452280034
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -279,17 +279,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 2776051795049151537}
   m_Enabled: 1
   m_AgentTypeID: 1479372276
-  m_Radius: 1.2
+  m_Radius: 0.37
   m_Speed: 10
   m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1.3
+  m_BaseOffset: 0.84
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8430716015520040358
@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90c1960c225ff694eb44836a18561fc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.034
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90c1960c225ff694eb44836a18561fc2, type: 3}
       propertyPath: m_LocalPosition.y

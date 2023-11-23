@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3297047914874336203}
   - component: {fileID: -432825096312198606}
   m_Layer: 3
-  m_Name: Cube.003 (15)
+  m_Name: Floor Destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   initialization: 1
   simulationType: 2
   objectType: 0
-  demolitionType: 3
+  demolitionType: 2
   physics:
     materialType: 4
     material: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
     byConnectivity: 0
     unyielding: 0
     activatable: 0
-    l: 0
+    l: 1
     layer: 0
     connect: {fileID: 0}
   limitations:

@@ -10,7 +10,7 @@ public class GiftManager : MonoBehaviour
     [SerializeField] private float SpawnTime;
     [SerializeField] private float ProbabiltySpawn;
 
-    private bool canSpawn = true;
+    [SerializeField] private bool canSpawn = true;
     private float timer = 0f;
     private GameObject SpawnedObject;
 

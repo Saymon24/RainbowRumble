@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2607510953910544430}
   - component: {fileID: -4584858583213811993}
   - component: {fileID: 1450214503005116324}
+  - component: {fileID: 6997322304956374250}
   m_Layer: 7
   m_Name: Cube.072 (34)
   m_TagString: Wall
@@ -485,3 +486,15 @@ MonoBehaviour:
     m_Center: {x: -12.569994, y: 2.57, z: 8.96}
     m_Extent: {x: 0.138025, y: 2.348, z: 3.10175}
   resetState: 0
+--- !u!114 &6997322304956374250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417072206056040893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ff76680c39fd945a91f5ba21912a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

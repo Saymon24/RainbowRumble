@@ -115,9 +115,9 @@ MonoBehaviour:
   showGizmo: 1
   rangeType: 0
   fadeType: 0
-  range: 2
+  range: 4.5
   deletion: 0
-  strength: 0.5
+  strength: 2
   variation: 30
   chaos: 30
   forceByMass: 1

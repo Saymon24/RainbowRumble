@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private Button Damage;
+    [SerializeField] private Button FireRate;
+    [SerializeField] private Button MagSize;
+
+    private string weaponToDisplay = "Narf";
+
+    public void DisplayUpgradeByWeaponName(string weaponName)
     {
-        
+        weaponToDisplay = weaponName;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ChangeUpgradeDisplayed()
     {
-        
+        return;
     }
+
 }

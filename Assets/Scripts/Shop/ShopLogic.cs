@@ -37,11 +37,5 @@ public class ShopLogic : MonoBehaviour
     private void GenerateShopData()
     {
 
-        ShopWeapon w = new ShopWeapon();
-
-        w.weaponName = "Narf";
-        w.upgradesLevel.Add(0);
-
     }
-
 }

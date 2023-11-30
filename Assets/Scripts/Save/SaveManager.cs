@@ -5,11 +5,32 @@ using System.IO;
 public class SaveManager : MonoBehaviour
 {
 
-    private SaveData data;
+    static public SaveManager instance;
+    public SaveData data;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        data = new SaveData();
         LoadSaveData();
+    }
+
+    public void SaveAllDatas()
+    {
+        string json = JsonUtility.ToJson(data);
+        using StreamWriter writer = new StreamWriter(Application.persistentDataPath + "/SaveData.json");
+        writer.Write(json);
+
     }
 
     private void LoadSaveData()
@@ -18,9 +39,18 @@ public class SaveManager : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
-            data = JsonUtility.FromJson<SaveData>(json);
-        }
+            using StreamReader reader = new StreamReader(filePath);
+            string json = reader.ReadToEnd();
 
+            data = JsonUtility.FromJson<SaveData>(json);
+
+            data.shop.LoadShopData();
+            data.profile.LoadProfileData();
+        }
+        else
+        {
+            data.CreateAllData();
+            SaveAllDatas();
+        }
     }
 }

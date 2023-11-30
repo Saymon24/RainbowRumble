@@ -11,5 +11,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+
+        if (GameObject.Find("SaveManager").TryGetComponent(out ApplySave save))
+        {
+            save.ApplySaveOnPlayer();
+        }
     }
 }

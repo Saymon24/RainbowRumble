@@ -38,7 +38,7 @@ public class DeathMenu : MonoBehaviour
             t.gameObject.SetActive(true);
         }
 
-        ScoreTxt.text = "Score: " + Score.score;
+        ScoreTxt.text = Score.score.ToString();
         CalculateCoins(Score.score);
 
         Cursor.lockState = CursorLockMode.None;
@@ -49,7 +49,7 @@ public class DeathMenu : MonoBehaviour
     private void CalculateCoins(int score)
     {
         TC = score / 10_000;
-        TCTxt.text = "TC: " + TC.ToString();
+        TCTxt.text = "+" + TC.ToString() + " TC";
 
         if (score >= 1_000_000)
         {
@@ -61,7 +61,7 @@ public class DeathMenu : MonoBehaviour
                 RC = 0;
             }
         }
-        RCTxt.text = "RC: " + RC.ToString();
+        RCTxt.text = "+" + RC.ToString() + " RC";
     }
 
     public void GoBackToMainMenu()

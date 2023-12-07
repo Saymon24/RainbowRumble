@@ -6,6 +6,7 @@ public class TeddyBearsAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     [SerializeField] private Rigidbody rb;
+    private Animator animator;
 
     private Transform player;
 
@@ -23,10 +24,14 @@ public class TeddyBearsAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
+        if (GetComponent<Enemy>().isDead)
+            return;
+
         // Check for sight and attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -45,6 +50,7 @@ public class TeddyBearsAI : MonoBehaviour
     {
         // Stop moving enemies
         agent.SetDestination(transform.position);
+        animator.SetBool("IsAttack", true);
 
         //transform.LookAt(player);
 
@@ -59,6 +65,7 @@ public class TeddyBearsAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+        animator.SetBool("IsAttack", false);
     }
 
     private void OnDrawGizmosSelected()

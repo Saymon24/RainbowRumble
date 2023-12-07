@@ -7,6 +7,7 @@ public class BossTeddyBearsAI : MonoBehaviour
     public NavMeshAgent agent;
     //private NavMeshPath path;
     [SerializeField] private Rigidbody rb;
+    private Animator animator;
 
     private Transform player;
 
@@ -28,10 +29,14 @@ public class BossTeddyBearsAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
+        if (GetComponent<Enemy>().isDead)
+            return;
+
         if (agent.hasPath)
         {
             Vector3[] waypoints = agent.path.corners;
@@ -65,8 +70,7 @@ public class BossTeddyBearsAI : MonoBehaviour
     {
         // Stop moving enemies
         agent.SetDestination(transform.position);
-
-        //transform.LookAt(player);
+        animator.SetBool("IsAttack", true);
 
         if (!alreadyAttacked)
         {
@@ -79,6 +83,7 @@ public class BossTeddyBearsAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+        animator.SetBool("IsAttack", false);
     }
 
     private void OnDrawGizmosSelected()

@@ -16,6 +16,8 @@ public class UnicornAI : MonoBehaviour
 
     Vector3 playerPosition;
 
+    private Animator animator;
+
     public int dashSpeed = 2;
     public float timeBetweenDash = 3f;
     public float dashDuration = 5f;
@@ -33,6 +35,7 @@ public class UnicornAI : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         dashClockStart = Time.time;
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,6 +70,7 @@ public class UnicornAI : MonoBehaviour
                 {
                         if (canDash && !isDashing)
                         {
+                            animator.SetBool("IsDashing", true);
                             agent.enabled = false;
                             rb.constraints = RigidbodyConstraints.FreezeRotation;
                             playerPosition = overlap[i].transform.position;
@@ -85,6 +89,7 @@ public class UnicornAI : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        animator.SetBool("IsDashing", false);
         rb.Sleep();
         dashClockStart = Time.time;
         agent.enabled = true;
@@ -110,6 +115,9 @@ public class UnicornAI : MonoBehaviour
 
     private void Update()
     {
+        if (GetComponent<Enemy>().isDead)
+            return;
+
         LookUpdate();
         updateDash();
 

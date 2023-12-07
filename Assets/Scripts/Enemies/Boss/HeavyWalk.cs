@@ -15,15 +15,12 @@ public class HeavyWalk : MonoBehaviour
     [Header("Walk Settings")]
     [SerializeField] private float walkRange = 5f;
 
-    // For testing
-    private float startTime = 0f;
-
     void Start()
     {
         playerTransform = GameObject.Find("Player").transform;
 
         // For Testing
-        startTime = Time.time;
+        //startTime = Time.time;
     }
 
     private bool isPlayerInRange()
@@ -44,16 +41,5 @@ public class HeavyWalk : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, walkRange);
-    }
-
-    private void Update()
-    {
-        float t = Time.time - startTime;
-
-        if (t > 0.5)
-        {
-            applyHeavyWalkEffect();
-            startTime = Time.time;
-        }
     }
 }

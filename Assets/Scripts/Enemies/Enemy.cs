@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     private GameObject player;
     public LayerMask groundLayer;
+    private Animator animator;
+    private Rigidbody rb;
+    private Collider collider;
 
     [Header("Enemy Settings")]
     public float health = 100f;
@@ -18,6 +21,7 @@ public class Enemy : MonoBehaviour
     public float damage = 5f;
     public float spawnRate = 1f; // 1f -> Entity must spawn
     public int score = 15;
+    public bool isDead = false;
 
     private EnemyManager manager;
 
@@ -37,6 +41,9 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         player = GameObject.Find("Player");
+        animator = GetComponentInChildren<Animator>();
+        rb = GetComponentInChildren<Rigidbody>();
+        collider = GetComponent<Collider>();
 
         manager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
     }
@@ -44,7 +51,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (health <= 0)
-            destroyEnemy();
+            Die();
     }
 
     public void takeDamage(float damage)
@@ -126,11 +133,36 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        if (!isDead)
+        {
+            int randomNum = UnityEngine.Random.Range(1, 4);
+
+            collider.enabled = false;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            agent.enabled = false;
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+
+            if (animator)
+            {
+                animator.SetBool("IsDead", true);
+                animator.SetInteger("DeathNumber", randomNum);
+            }
+
+            SpawnPowerUp();
+            GiveScore();
+            manager.RemoveEnemy();
+
+            Invoke(nameof(destroyEnemy), 5);
+
+            isDead = true;
+        }
+    }
+
     private void destroyEnemy()
     {
-        SpawnPowerUp();
-        GiveScore();
-        manager.RemoveEnemy();
         Destroy(gameObject);
     }
 }

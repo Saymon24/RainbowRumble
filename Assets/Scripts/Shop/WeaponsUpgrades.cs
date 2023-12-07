@@ -14,7 +14,7 @@ public enum upgradeType
 [System.Serializable]
 public class WeaponsUpgrades
 {
-    private int _maxLevel;
+    public int _maxLevel;
     private float[] _upgradePerLevel;
 
     public int _level;

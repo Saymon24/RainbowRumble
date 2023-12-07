@@ -3,14 +3,35 @@ using UnityEngine;
 public class WeaponButton : MonoBehaviour
 {
 
+    [SerializeField] private string WeaponName;
 
+    private ShopUI shopUI;
 
-    public void askDisplayToManager(string weaponName)
+    private void Start()
     {
-        if (GameObject.Find("ShopUI").TryGetComponent(out ShopUI shopUI))
+        if (GameObject.Find("ShopMenu").TryGetComponent(out ShopUI shopU))
         {
-            shopUI.DisplayUpgradeByWeaponName(weaponName);
+            shopUI = shopU;
         }
     }
+
+    public void ChangeActiveWeapon()
+    {
+
+        shopUI.ChangeActiveWeapon(WeaponName);
+
+    }
+
+
+    /*    public void askDisplayToManager(string weaponName)
+        {
+            if (GameObject.Find("ShopUI").TryGetComponent(out ShopUI shopUI))
+            {
+                shopUI.DisplayUpgradeByWeaponName(weaponName);
+            }
+        }*/
+
+
+
 
 }

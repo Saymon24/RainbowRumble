@@ -46,4 +46,25 @@ public class ShopData
         foreach (ShopWeapon weapon in gunList)
             weapon.PrintWeapon();
     }
+
+    public WeaponsUpgrades GetWeaponsUpgrades(string name, upgradeType type)
+    {
+        foreach (ShopWeapon weapon in gunList)
+        {
+            if (weapon._weaponName == name && type == upgradeType.DAMAGE)
+                return weapon._allUpgrades[0];
+
+            if (weapon._weaponName == name && type == upgradeType.FIRE_RATE)
+                if (weapon._allUpgrades.Count > 1)
+                    return weapon._allUpgrades[1];
+
+            if (weapon._weaponName == name && type == upgradeType.MAGAZINE_SIZE)
+                if (weapon._allUpgrades.Count > 1)
+                    return weapon._allUpgrades[2];
+        }
+
+        return null;
+
+    }
+
 }

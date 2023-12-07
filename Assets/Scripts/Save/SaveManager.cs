@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class SaveManager : MonoBehaviour
 {
@@ -53,4 +54,19 @@ public class SaveManager : MonoBehaviour
             SaveAllDatas();
         }
     }
+
+    public List<WeaponsUpgrades> GetUpgradeByWeaponName(string weaponName)
+    {
+
+        List<WeaponsUpgrades> upgradeList = new List<WeaponsUpgrades>
+        {
+            data.shop.GetWeaponsUpgrades(weaponName, upgradeType.DAMAGE),
+            data.shop.GetWeaponsUpgrades(weaponName, upgradeType.FIRE_RATE),
+            data.shop.GetWeaponsUpgrades(weaponName, upgradeType.MAGAZINE_SIZE)
+        };
+
+        return upgradeList;
+
+    }
+
 }

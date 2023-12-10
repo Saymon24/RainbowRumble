@@ -122,6 +122,10 @@ PrefabInstance:
       propertyPath: RotateWeapon
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2407551013237484898, guid: dc9d15597614e3a4bac376004da2fb57, type: 3}
+      propertyPath: currentInstance
+      value: 
+      objectReference: {fileID: 5908488546563194574}
     - target: {fileID: 3417560227005771698, guid: dc9d15597614e3a4bac376004da2fb57, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1822
@@ -250,6 +254,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5817e55f7d8fad14c918c48651c0981b, type: 3}
+--- !u!1 &5908488546563194574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5817e55f7d8fad14c918c48651c0981b, type: 3}
+  m_PrefabInstance: {fileID: 6718881184015827871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6536125674500695156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5817e55f7d8fad14c918c48651c0981b, type: 3}

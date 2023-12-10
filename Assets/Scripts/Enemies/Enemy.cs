@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
 
             if (randomValue <= cumulativeRate)
             {
-                GameObject powerUp = Instantiate(droppablePowerUp[i].powerUp, groundPos, Quaternion.identity);
+                GameObject powerUp = Instantiate(droppablePowerUp[i].powerUp, groundPos, Quaternion.identity);  
                 int rarityChoosen = GetRarityPowerUp(i);
 
                 powerUp.GetComponent<RarityPowerUp>().setRarity(rarityChoosen);

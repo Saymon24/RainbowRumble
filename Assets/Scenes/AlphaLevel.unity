@@ -41608,6 +41608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dungeon-wall-prison
       objectReference: {fileID: 0}
+    - target: {fileID: 1768021477997006, guid: 3316d5c6f07ad4ef5b957ede56827bad, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4390558277776286, guid: 3316d5c6f07ad4ef5b957ede56827bad, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8672497

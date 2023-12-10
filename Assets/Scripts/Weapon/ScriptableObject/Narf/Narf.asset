@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Narf
   type: 0
-  damage: 50
+  damage: 60
   range: 150
   bulletSpeed: 870
   impactForce: 10
-  currentAmmo: 30
+  currentAmmo: 18
   magSize: 30
   fireRate: 550
   reloadTime: 3

@@ -55,10 +55,8 @@ public class MeleeWeapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("OntriggerStay");
         if (other.CompareTag("Enemy") && dealDamage)
         {
-            print("I deal damage to enemy");
             other.GetComponent<Enemy>().takeDamage(weaponData.damage);
         }
     }

@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
     public void AttackPlayer()
     {
         AudioManager.instance.PlaySFX("MonsterGrunt");
-        player.GetComponent<HealthController>().TakeDamage(damage);
     }
 
     public void GiveScore()

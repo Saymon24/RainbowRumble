@@ -41,6 +41,12 @@ public class DeathMenu : MonoBehaviour
         ScoreTxt.text = Score.score.ToString();
         CalculateCoins(Score.score);
 
+        if (GameObject.Find("SaveManager").TryGetComponent(out SaveManager saveM))
+        {
+            saveM.data.profile.AddCoins(RC, TC);
+            saveM.SaveAllDatas();
+        }
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

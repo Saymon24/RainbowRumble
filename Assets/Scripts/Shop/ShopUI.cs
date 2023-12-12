@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class ShopUI : MonoBehaviour
 {
 
+    [SerializeField] private TMP_Text RCText;
+    [SerializeField] private TMP_Text TCText;
+
     [SerializeField] private Button Damage;
     [SerializeField] private Button FireRate;
     [SerializeField] private Button MagSize;
@@ -41,6 +44,20 @@ public class ShopUI : MonoBehaviour
 
         }
 
+    }
+
+    private void OnEnable()
+    {
+        if (GameObject.Find("SaveManager").TryGetComponent(out SaveManager saveM))
+        {
+
+            saveManager = saveM;
+            ChangeUpgradeDisplayed();
+
+        }
+
+        RCText.text = "RC: " + saveManager.data.profile.getRC().ToString();
+        TCText.text = "TC: " + saveManager.data.profile.getTC().ToString();
     }
 
     public void ChangeActiveWeapon(string weaponName)
@@ -135,6 +152,8 @@ public class ShopUI : MonoBehaviour
                     if (up._upgradeType == upgradeType)
                     {
                         up.LevelUp();
+                        saveManager.SaveAllDatas();
+                        return;
                     }
                 }
             }
